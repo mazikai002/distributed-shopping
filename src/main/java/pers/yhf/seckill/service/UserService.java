@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import pers.yhf.seckill.domain.User;
-import pers.yhf.seckill.mapper.UserMapper;
+import pers.yhf.seckill.repository.UserRepository2;
 
 @Service
 public class UserService {
 
 	@Autowired
-	private UserMapper userMapper;
+	private UserRepository2 userMapper;
 	
 	
 	public User getUserById(int id){

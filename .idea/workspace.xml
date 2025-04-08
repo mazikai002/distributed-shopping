@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/SecKillConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/SecKillConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/OrderMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillGoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillGoodsMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/rabbitmq/MQReceiver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/rabbitmq/MQSender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/rabbitmq/SeckillMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/result/CodeMsg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/result/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/OrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/DBUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/MD5Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/ReadUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/SnowFlakeIdWorker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/TimeUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/UUIDUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/UserUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/ValidatorUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/validator/IsMobileValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/validator/IsMobileValidator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/pers/yhf/seckill/mapper/UserMapper.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="customMavenHome" value="$USER_HOME$/Library/Maven/apache-maven-3.6.3" />
+        <option name="localRepository" value="$USER_HOME$/Library/Maven/repository" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
+        <option name="userSettingsFile" value="$USER_HOME$/Library/Maven/apache-maven-3.6.3/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2vS2ll5z4zfhbd9JLOLlyN5Ug6I" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "Settings.JavaScript",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="distributed-shopping" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="distributed-shopping" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecKillApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="distributed-shopping" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.yhf.seckill.SecKillApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.69" />
+        <option value="bundled-js-predefined-1d06a55b98c1-2e7d6887c066-JavaScript-IU-241.15989.69" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="" />
+      <created>1744124308194</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1744124308194</updated>
+      <workItem from="1744124309930" duration="2320000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

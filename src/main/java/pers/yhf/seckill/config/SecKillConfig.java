@@ -1,6 +1,6 @@
 package pers.yhf.seckill.config;
 
-import pers.yhf.seckill.util.TimeUtil;
+import pers.yhf.seckill.common.utils.TimeUtil;
 
 /**
  * 关于商品秒杀的配置

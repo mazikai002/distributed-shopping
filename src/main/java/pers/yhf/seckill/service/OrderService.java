@@ -13,7 +13,7 @@ import pers.yhf.seckill.domain.OrderInfo;
 import pers.yhf.seckill.mapper.OrderMapper;
 import pers.yhf.seckill.redisCluster.RedisService;
 import pers.yhf.seckill.redisCluster.SecKillActivityKey;
-import pers.yhf.seckill.util.TimeUtil;
+import pers.yhf.seckill.common.utils.TimeUtil;
 import pers.yhf.seckill.vo.GoodsVo;
 
 @Service

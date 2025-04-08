@@ -16,8 +16,8 @@ import pers.yhf.seckill.redisCluster.RedisService;
 import pers.yhf.seckill.redisCluster.SecKillActivityKey;
 import pers.yhf.seckill.result.Result;
 import pers.yhf.seckill.service.SeckillUserService;
-import pers.yhf.seckill.util.MD5Util;
-import pers.yhf.seckill.util.UUIDUtil;
+import pers.yhf.seckill.common.utils.MD5Util;
+import pers.yhf.seckill.common.utils.UUIDUtil;
 import pers.yhf.seckill.vo.LoginVo; 
  
 

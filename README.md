@@ -1,4 +1,37 @@
-# &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp;  &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;技术清单
+# 分布式商城系统
+
+## 项目结构
+
+```
+├── controller     // 控制层
+├── service       // 业务逻辑层
+│   ├── interface // 接口定义
+│   └── impl      // 接口实现
+├── repository    // 数据访问层
+├── model         // 数据模型层
+│   ├── entity    // 数据库实体
+│   ├── dto       // 数据传输对象
+│   ├── vo        // 视图对象
+│   └── param     // 请求参数对象
+├── common        // 公共模块
+│   ├── constant  // 常量定义
+│   ├── enums     // 枚举类
+│   ├── exception // 自定义异常
+│   ├── result    // 统一返回结果
+│   ├── utils     // 工具类
+│   └── aspect    // 切面类
+├── component     // 组件目录
+│   ├── mq        // 消息队列组件
+│   ├── storage   // 存储组件
+│   ├── search    // 搜索引擎组件
+│   └── config    // 配置类
+├── integration   // 外部服务集成
+│   ├── client    // 服务调用客户端
+│   ├── config    // 服务配置
+│   └── model     // 服务数据模型
+└── resources     // 资源文件
+    └── application.yml // 配置文件
+```
   
 
 #### 数据库
@@ -39,10 +72,3 @@
 - Tomcat优化
 - SQL优化
 
-####  作者声明
-- [本人声明](https://github.com/yhf56davis/distributed-shopping/blob/master/docs/declaration.md)
-
-####  联系作者
-&nbsp; &nbsp;&nbsp; QQ: &nbsp; &nbsp; 619626930  <br>
- 微信号： YHF-NJU-22    <br>
-![输入图片说明](https://images.gitee.com/uploads/images/2018/1226/010702_628403c3_1648495.png "屏幕截图.png")

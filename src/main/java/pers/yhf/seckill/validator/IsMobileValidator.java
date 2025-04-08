@@ -5,7 +5,7 @@ import javax.validation.ConstraintValidatorContext;
 
 import org.apache.commons.lang3.StringUtils;
 
-import pers.yhf.seckill.util.ValidatorUtil;
+import pers.yhf.seckill.common.utils.ValidatorUtil;
 
 public class IsMobileValidator implements ConstraintValidator<IsMobile,String>{
 
