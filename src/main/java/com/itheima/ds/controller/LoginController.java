@@ -18,11 +18,11 @@ import com.itheima.ds.common.result.Result;
 import com.itheima.ds.service.SeckillUserService;
 import com.itheima.ds.common.utils.MD5Util;
 import com.itheima.ds.common.utils.UUIDUtil;
-import com.itheima.ds.vo.LoginVo; 
- 
+import com.itheima.ds.vo.LoginVo;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping("/login")
+
+@RestController("/login")
 public class LoginController {
 	
 	private static Logger log = LoggerFactory.getLogger(LoginController.class);
