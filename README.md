@@ -1,7 +1,7 @@
 # 分布式商城系统
 
 ## 项目介绍
-分布式商城系统是一个基于微服务架构设计的电商平台，实现了商品管理、用户管理、订单处理、秒杀活动等核心功能。系统特别注重高并发场景的处理，采用了多级缓存、异步处理、限流等多种手段来保证系统的高可用性和稳定性。
+分布式商城系统是一个基于单体架构设计的电商平台，实现了商品管理、用户管理、订单处理、秒杀活动等核心功能。系统特别注重高并发场景的处理，采用了多级缓存、异步处理、限流等多种手段来保证系统的高可用性和稳定性。
 
 ### 核心功能
 - 商品管理：商品的CRUD操作，库存管理
@@ -15,8 +15,10 @@
 ### 后端技术
 - 核心框架：Spring Boot
 - 数据库：MySQL（主从复制）
-- 缓存：Redis Cluster（分布式缓存）
+- 缓存：Redis（缓存）
 - 消息队列：RocketMQ（异步处理）
+- 搜索引擎：Elasticsearch（全文检索）
+- 对象存储：MinIO（图片存储）
 - ORM框架：MyBatis
 - 数据库连接池：Druid
 - 接口文档：Swagger
@@ -43,23 +45,24 @@ src/main/java/pers/yhf/seckill/
 │   ├── enums/                # 枚举类
 │   ├── exception/            # 异常处理
 │   ├── result/               # 统一返回结果
+│   ├── validator/            # 参数校验
 │   └── utils/                # 工具类
 ├── component/                # 组件
 │   ├── cache/                # 缓存组件
 │   │   └── redis/           # Redis缓存实现
 │   ├── limiter/             # 限流组件
-│   └── mq/                  # 消息队列组件
-├── config/                   # 全局配置
-├── controller/               # 控制器层
-├── model/                    # 数据模型
+│   └── mq                   # 消息队列组件
+│   │   └── rocketmq         # Redis缓存实现
+├── config/                  # 全局配置
+├── controller/              # 控制器层
+├── model/                   # 数据模型
 │   ├── dto/                 # 数据传输对象
 │   ├── entity/              # 实体类
 │   └── vo/                  # 视图对象
 ├── repository/              # 数据访问层
 │   └── mapper/              # MyBatis Mapper接口
-├── service/                 # 业务逻辑层
-│   └── impl/                # 接口实现
-└── validator/               # 参数校验
+└── service/                 # 业务逻辑层
+    └── impl/                # 接口实现
 ```
 
 ## 环境要求
@@ -80,7 +83,7 @@ src/main/java/pers/yhf/seckill/
    - 配置Redis持久化和主从复制
 
 3. 消息队列配置
-   - 参考`docs/install/rabbitMQ.md`部署RocketMQ
+   - 参考`docs/install/RocketMQ.md`部署RocketMQ
    - 配置死信队列和消息持久化
 
 4. 应用部署
@@ -143,7 +146,6 @@ src/main/java/pers/yhf/seckill/
 
 8. **配置管理**
    - 配置类统一放在config包下
-   - 组件配置放在component.config下
 
 9. **缓存规范**
    - 缓存组件放在component.cache下

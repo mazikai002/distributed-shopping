@@ -43,7 +43,4 @@ public class TestController {
  		       System.out.println("测试时间： "+list+"    "+sg);
  	    return Result.success(true);
  	}
-	
-	
-	
 }

@@ -18,7 +18,7 @@ import org.thymeleaf.util.StringUtils;
 import pers.yhf.seckill.config.SecKillConfig;
 import pers.yhf.seckill.domain.SeckillGoods;
 import pers.yhf.seckill.domain.SeckillUser;
-import pers.yhf.seckill.exception.GlobalException;
+import pers.yhf.seckill.common.exception.GlobalException;
 import pers.yhf.seckill.mapper.SeckillUserMapper;
 import pers.yhf.seckill.redisCluster.RedisService;
 import pers.yhf.seckill.redisCluster.SecKillActivityKey;

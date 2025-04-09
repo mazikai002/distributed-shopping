@@ -1,0 +1,65 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:5.7
+    container_name: seckill-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: seckill
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./sql:/docker-entrypoint-initdb.d
+      - mysql_data:/var/lib/mysql
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    networks:
+      - seckill-network
+
+  redis:
+    image: redis:6.2
+    container_name: seckill-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - seckill-network
+
+  rocketmq-namesrv:
+    image: apache/rocketmq:4.9.4
+    container_name: seckill-rocketmq-namesrv
+    ports:
+      - "9876:9876"
+    volumes:
+      - rocketmq_namesrv_data:/home/rocketmq/namesrv
+    command: sh mqnamesrv
+    networks:
+      - seckill-network
+
+  rocketmq-broker:
+    image: apache/rocketmq:4.9.4
+    container_name: seckill-rocketmq-broker
+    ports:
+      - "10909:10909"
+      - "10911:10911"
+    volumes:
+      - rocketmq_broker_data:/home/rocketmq/broker
+    command: sh mqbroker -n rocketmq-namesrv:9876
+    depends_on:
+      - rocketmq-namesrv
+    environment:
+      - JAVA_OPT_EXT=-server -Xms512m -Xmx512m
+    networks:
+      - seckill-network
+
+volumes:
+  mysql_data:
+  redis_data:
+  rocketmq_namesrv_data:
+  rocketmq_broker_data:
+
+networks:
+  seckill-network:
+    driver: bridge

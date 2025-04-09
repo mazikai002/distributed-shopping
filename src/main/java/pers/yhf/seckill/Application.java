@@ -10,8 +10,7 @@ import com.google.common.hash.Funnels;
   
 
 @SpringBootApplication
-@MapperScan(basePackages = {"pers.yhf.seckill.mapper"})
-public class SecKillApplication extends SpringBootServletInitializer implements CommandLineRunner{
+public class Application extends SpringBootServletInitializer implements CommandLineRunner{
 	 
     public static void main(String[] args) throws Exception {
        
@@ -33,10 +32,7 @@ public class SecKillApplication extends SpringBootServletInitializer implements 
           SpringApplication.run(SecKillApplication.class, args); 
     	
     }
-    
-    
-    
-    
+
 
 	@Override
 	public void run(String... arg0) throws Exception {
