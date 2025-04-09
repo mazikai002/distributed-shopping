@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/SecKillApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/cache/redis/JedisClusterConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/config/RocketMQConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/RabbitMQComponentConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/currentlimiting/CountRateLimiting.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/exception/GlobalException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/exception/GlobalExceptionHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/redisCluster/JedisClusterConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/validator/IsMobile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/validator/IsMobileValidator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-    </list>
+    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,22 +31,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.JavaScript&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.distributed-shopping [clean].executor": "Run",
+    "Maven.distributed-shopping [package].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "Settings.JavaScript",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="SecKillApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="distributed-shopping" />
@@ -90,7 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744124308194</updated>
       <workItem from="1744124309930" duration="2676000" />
-      <workItem from="1744212182694" duration="400000" />
+      <workItem from="1744212182694" duration="824000" />
     </task>
     <servers />
   </component>
