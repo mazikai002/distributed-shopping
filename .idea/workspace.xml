@@ -4,34 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/SecKillConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/SecKillConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillGoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillGoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/SeckillUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/mapper/UserMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/rabbitmq/MQReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/rabbitmq/MQSender.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/rabbitmq/SeckillMessage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/result/CodeMsg.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/result/Result.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/DBUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/MD5Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/ReadUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/SnowFlakeIdWorker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/TimeUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/UUIDUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/UserUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/util/ValidatorUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/validator/IsMobileValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/validator/IsMobileValidator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/pers/yhf/seckill/mapper/UserMapper.xml" beforeDir="false" />
-    </list>
+    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,7 +85,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744124308194</updated>
-      <workItem from="1744124309930" duration="2320000" />
+      <workItem from="1744124309930" duration="2676000" />
     </task>
     <servers />
   </component>

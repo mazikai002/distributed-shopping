@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import pers.yhf.seckill.domain.User;
+import pers.yhf.seckill.model.entity.User;
 import pers.yhf.seckill.redisCluster.RedisService;
 import pers.yhf.seckill.result.CodeMsg;
 import pers.yhf.seckill.result.Result;

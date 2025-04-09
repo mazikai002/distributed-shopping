@@ -1,12 +1,12 @@
-package pers.yhf.seckill.model.param;
+package pers.yhf.seckill.model.dto;
 
 import lombok.Data;
 
 /**
- * 秒杀请求参数
+ * 秒杀请求参数DTO
  */
 @Data
-public class SeckillParam {
+public class SeckillDTO {
     private Long goodsId;
     private String path;
 }
