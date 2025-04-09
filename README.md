@@ -89,7 +89,7 @@ src/main/java/pers/yhf/seckill/
 4. 应用部署
    - 修改配置文件中的数据库、Redis、MQ连接信息
    - 执行`mvn clean package`打包
-   - 使用Docker部署：`docker-compose up -d`
+   - 使用Docker部署：`cd deploy && docker-compose up -d`
 
 ## 性能优化
 

@@ -4,7 +4,7 @@
                                    http://maven.apache.org/xsd/maven-4.0.0.xsd">
                                    
   <modelVersion>4.0.0</modelVersion>
-  <groupId>pers.yhf</groupId>
+  <groupId>com.itheima</groupId>
   <artifactId>distributed-shopping</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>

@@ -4,7 +4,90 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="" />
+    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/.jsdtscope" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.component" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.common.project.facet.core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.container" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.jsdt.ui.superType.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.wst.validation.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/seckill.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/ConsumerDirectDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/ProducterDirectDemo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/constant/RedisConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/constant/SystemConstants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/enums/OrderStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/exception/GlobalException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/result/CodeMsg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/result/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/DBUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/MD5Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/ReadUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/SnowFlakeIdWorker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/TimeUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/UUIDUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/UserUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/utils/ValidatorUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/validator/IsMobile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/common/validator/IsMobileValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/cache/redis/KeyPrefix.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/cache/redis/RedisTemplate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/cache/redis/SecKillActivityKey.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/limiter/counter/CountRateLimiting.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/limiter/ratelimiter/AccessLimitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/mq/rocketmq/consumer/RocketMQConsumer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/mq/rocketmq/message/BaseMessage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/component/mq/rocketmq/producer/RocketMQProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/RocketMQConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/SecKillConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/SeckillOrderConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/UserArgumentResolver.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/DemoController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/GoodsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/MQController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/SeckillController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/controller/TestRedisController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/dto/SeckillDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/dto/UserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/entity/Goods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/entity/OrderInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/entity/SeckillGoods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/entity/SeckillOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/entity/SeckillUser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/vo/GoodsDetailVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/vo/GoodsVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/vo/LoginVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/vo/OrderDetailVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/model/vo/SeckillOrderVo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/repository/mapper/GoodsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/repository/mapper/OrderMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/repository/mapper/SeckillGoodsMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/repository/mapper/SeckillUserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/repository/mapper/UserMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/AccessLimitService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/GoodsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/SeckillUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pers/yhf/seckill/service/impl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,6 +119,7 @@
     "Maven.distributed-shopping [clean].executor": "Run",
     "Maven.distributed-shopping [package].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.Application (1).executor": "Run",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -49,7 +133,27 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.Application (1)">
+    <configuration name="Application (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="distributed-shopping" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.itheima.distributedshopping.Application" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.itheima.distributedshopping.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="distributed-shopping" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="pers.yhf.seckill.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SecKillApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="distributed-shopping" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="pers.yhf.seckill.SecKillApplication" />
@@ -57,6 +161,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -75,7 +184,7 @@
       <option name="presentableId" value="Default" />
       <updated>1744124308194</updated>
       <workItem from="1744124309930" duration="2676000" />
-      <workItem from="1744212182694" duration="824000" />
+      <workItem from="1744212182694" duration="2487000" />
     </task>
     <servers />
   </component>
