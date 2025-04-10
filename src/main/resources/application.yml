@@ -1,0 +1,133 @@
+server:
+  port: 8082
+  
+spring:
+  application:
+    name: seckill-service
+    
+  # Thymeleaf配置
+  thymeleaf:
+    cache: false
+    content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML5
+    prefix: classpath:/templates/
+    suffix: .html
+    
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://47.92.251.151:3306/seckill?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 861117
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 1000
+    initialSize: 100
+    maxWait: 60000
+    minIdle: 500
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+    
+  # 静态资源配置
+  resources:
+    add-mappings: true
+    cache-period: 3600
+    chain:
+      cache: true
+      enabled: true
+      gzipped: true
+      html-application-cache: true
+    static-locations: classpath:/static/
+    
+  # RabbitMQ配置
+  rabbitmq:
+    host: 47.92.251.151
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /
+    listener:
+      simple:
+        concurrency: 10
+        max-concurrency: 10
+        prefetch: 1
+        auto-startup: true
+        default-requeue-rejected: true
+    template:
+      retry:
+        enabled: true
+        initial-interval: 1000
+        max-attempts: 3
+        max-interval: 10000
+        multiplier: 1.0
+
+# MyBatis配置
+mybatis:
+  type-aliases-package: com.itheima.ds.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+  mapper-locations: classpath:pers/yhf/seckill/mapper/*.xml
+mybatis_config_file: classpath:config/mybatis-config.xml
+    
+# Redis配置
+redis:
+  host: 47.92.251.151
+  port: 6379
+  timeout: 40
+  poolMaxTotal: 60000
+  poolMaxIdle: 1000
+  poolMaxWait: 500
+
+# 其他配置
+server_pic_url: 47.92.251.151:8086/goodsImages/
+rabbitMQHost: 47.92.251.151
+rabbitMQUserName: admin
+rabbitMQPassword: admin
+
+# RocketMQ配置
+rocketmq:
+  name-server: 127.0.0.1:9876
+  producer:
+    group: seckill_producer
+    send-message-timeout: 3000
+  topic:
+    seckill: seckill_topic
+    order: order_topic
+  consumer:
+    group: seckill_consumer
+    
+# MinIO配置
+minio:
+  endpoint: http://localhost:9000
+  access-key: minioadmin
+  secret-key: minioadmin
+  default-bucket: seckill
+  url-prefix: http://localhost:9000
+  access-url-expire: 7
+    
+# JWT配置
+jwt:
+  secret: your-secret-key
+  expiration: 3600
+  header: Authorization
+  
+# Token配置
+token:
+  expiration: 86400
+  header: Authorization
+
+# 日志配置
+logging:
+  level:
+    root: info
+    com.itheima.ds: debug 

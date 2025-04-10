@@ -10,8 +10,41 @@ import com.itheima.ds.mapper.GoodsMapper;
 import com.itheima.ds.mapper.SeckillUserMapper;
 import com.itheima.ds.vo.GoodsVo;
 
+/**
+ * 商品服务接口
+ */
+public interface GoodsService {
+    
+    /**
+     * 获取商品列表
+     * @return 商品列表
+     */
+    List<GoodsVo> listGoodsVo();
+    
+    /**
+     * 根据商品ID获取商品详情
+     * @param goodsId 商品ID
+     * @return 商品详情
+     */
+    GoodsVo getGoodsVoByGoodsId(Long goodsId);
+    
+    /**
+     * 更新商品库存
+     * @param goodsId 商品ID
+     * @param stock 库存
+     */
+    void updateStock(Long goodsId, Integer stock);
+    
+    /**
+     * 使用Redis更新商品库存，提高性能
+     * @param goodsId 商品ID
+     * @param stock 库存
+     */
+    void updateStockWithRedis(Long goodsId, Integer stock);
+}
+
 @Service
-public class GoodsService {
+public class GoodsServiceImpl implements GoodsService {
 
 	@Autowired
 	private GoodsMapper goodsMapper;

@@ -16,8 +16,50 @@ import com.itheima.ds.redisCluster.SecKillActivityKey;
 import com.itheima.ds.common.utils.TimeUtil;
 import com.itheima.ds.vo.GoodsVo;
 
+/**
+ * 订单服务接口
+ */
+public interface OrderService {
+    
+    /**
+     * 获取订单详情
+     * @param orderId 订单ID
+     * @return 订单详情
+     */
+    SeckillOrder getOrderById(Long orderId);
+    
+    /**
+     * 创建订单
+     * @param order 订单信息
+     * @return 订单ID
+     */
+    Long createOrder(SeckillOrder order);
+    
+    /**
+     * 使用Redis创建订单，提高性能
+     * @param order 订单信息
+     * @return 订单ID
+     */
+    Long createOrderWithRedis(SeckillOrder order);
+    
+    /**
+     * 获取用户的订单列表
+     * @param userId 用户ID
+     * @return 订单列表
+     */
+    List<SeckillOrder> getUserOrders(Long userId);
+    
+    /**
+     * 通过用户ID和商品ID获取秒杀订单
+     * @param userId 用户ID
+     * @param goodsId 商品ID
+     * @return 秒杀订单
+     */
+    SeckillOrder getSeckillOrderByUserIdGoodsId(Long userId, Long goodsId);
+}
+
 @Service
-public class OrderService {
+public class OrderServiceImpl implements OrderService {
 
 	@Autowired
 	private OrderMapper orderMapper;

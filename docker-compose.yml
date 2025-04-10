@@ -1,0 +1,125 @@
+version: '3'
+
+services:
+  # MySQL服务
+  mysql:
+    image: mysql:8.0
+    container_name: seckill-mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: seckill
+      TZ: Asia/Shanghai
+    command: 
+      --character-set-server=utf8mb4 
+      --collation-server=utf8mb4_unicode_ci
+      --default-authentication-plugin=mysql_native_password
+    networks:
+      - seckill-network
+    restart: always
+
+  # Redis服务
+  redis:
+    image: redis:6.2
+    container_name: seckill-redis
+    ports:
+      - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes", "--requirepass", ""]
+    networks:
+      - seckill-network
+    restart: always
+
+  # Elasticsearch服务 (预装IK分词器)
+  elasticsearch:
+    image: basharlabadi/elasticsearch:7.17.7-with-ik
+    container_name: seckill-elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=false
+    networks:
+      - seckill-network
+    restart: always
+
+  # RocketMQ NameServer
+  rocketmq-namesrv:
+    image: apache/rocketmq:4.9.4
+    container_name: seckill-rocketmq-namesrv
+    ports:
+      - "9876:9876"
+    environment:
+      - JAVA_OPT=-Duser.home=/home/rocketmq
+    command: sh mqnamesrv
+    networks:
+      - seckill-network
+    restart: always
+
+  # RocketMQ Broker
+  rocketmq-broker:
+    image: apache/rocketmq:4.9.4
+    container_name: seckill-rocketmq-broker
+    ports:
+      - "10909:10909"
+      - "10911:10911"
+    environment:
+      - JAVA_OPT_EXT=-Duser.home=/home/rocketmq -Dbroker.props.autoCreateTopicEnable=true
+    command: sh mqbroker -n rocketmq-namesrv:9876
+    depends_on:
+      - rocketmq-namesrv
+    networks:
+      - seckill-network
+    restart: always
+
+  # RocketMQ Dashboard
+  rocketmq-dashboard:
+    image: apacherocketmq/rocketmq-dashboard:1.0.0
+    container_name: seckill-rocketmq-dashboard
+    ports:
+      - "8180:8080"
+    environment:
+      - JAVA_OPTS=-Drocketmq.namesrv.addr=rocketmq-namesrv:9876
+    depends_on:
+      - rocketmq-namesrv
+    networks:
+      - seckill-network
+    restart: always
+
+  # MinIO服务
+  minio:
+    image: minio/minio:RELEASE.2023-06-29T05-12-28Z
+    container_name: seckill-minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+    networks:
+      - seckill-network
+    restart: always
+
+  # MinIO初始化，创建默认bucket
+  minio-init:
+    image: minio/mc:RELEASE.2023-06-28T21-54-17Z
+    container_name: seckill-minio-init
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c '
+      sleep 10;
+      /usr/bin/mc config host add myminio http://minio:9000 minioadmin minioadmin;
+      /usr/bin/mc mb --ignore-existing myminio/seckill;
+      /usr/bin/mc policy set public myminio/seckill;
+      exit 0;
+      '
+    networks:
+      - seckill-network
+
+networks:
+  seckill-network:
+    driver: bridge 
