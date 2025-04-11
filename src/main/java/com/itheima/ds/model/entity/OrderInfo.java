@@ -1,4 +1,4 @@
-package com.itheima.ds.domain;
+package com.itheima.ds.model.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
