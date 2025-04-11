@@ -110,7 +110,7 @@ services:
     image: minio/minio:RELEASE.2023-06-29T05-12-28Z
     container_name: seckill-minio
     ports:
-      - "9000:9000"  # API端口
+      - "9002:9002"  # API端口
       - "9001:9001"  # 控制台端口
     environment:
       MINIO_ROOT_USER: minioadmin
@@ -122,7 +122,7 @@ services:
       - seckill-network
     restart: always
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      test: ["CMD", "curl", "-f", "http://localhost:9002/minio/health/live"]
       interval: 30s
       timeout: 20s
       retries: 3
@@ -136,7 +136,7 @@ services:
     entrypoint: >
       /bin/sh -c '
       sleep 10;
-      /usr/bin/mc config host add myminio http://minio:9000 minioadmin minioadmin;
+      /usr/bin/mc config host add myminio http://minio:9002 minioadmin minioadmin;
       /usr/bin/mc mb --ignore-existing myminio/seckill;
       /usr/bin/mc policy set public myminio/seckill;
       exit 0;
