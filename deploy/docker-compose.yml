@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   mysql:
-    image: mysql:5.7
+    image: mysql:latest
     container_name: seckill-mysql
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -54,11 +54,104 @@ services:
     networks:
       - seckill-network
 
+  # Elasticsearch服务
+  elasticsearch:
+    image: elasticsearch:7.17.7
+    container_name: seckill-elasticsearch
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - xpack.security.enabled=false
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
+    networks:
+      - seckill-network
+    restart: always
+
+  # Elasticsearch IK分词器插件安装
+  es-ik-installer:
+    image: curlimages/curl:7.86.0
+    container_name: seckill-es-ik-installer
+    depends_on:
+      - elasticsearch
+    command: >
+      sh -c '
+      sleep 30 &&
+      curl -X POST "elasticsearch:9200/_shutdown" ||: &&
+      curl -o /tmp/elasticsearch-analysis-ik-7.17.7.zip https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.17.7/elasticsearch-analysis-ik-7.17.7.zip &&
+      mkdir -p /usr/share/elasticsearch/plugins/ik &&
+      unzip /tmp/elasticsearch-analysis-ik-7.17.7.zip -d /usr/share/elasticsearch/plugins/ik/ &&
+      chmod -R 755 /usr/share/elasticsearch/plugins/ik
+      '
+    volumes:
+      - es_plugins:/usr/share/elasticsearch/plugins
+    networks:
+      - seckill-network
+
+  # Kibana服务 (Elasticsearch的可视化工具)
+  kibana:
+    image: kibana:7.17.7
+    container_name: seckill-kibana
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    depends_on:
+      - elasticsearch
+    networks:
+      - seckill-network
+    restart: always
+
+  # MinIO服务 (对象存储服务)
+  minio:
+    image: minio/minio:RELEASE.2023-06-29T05-12-28Z
+    container_name: seckill-minio
+    ports:
+      - "9000:9000"  # API端口
+      - "9001:9001"  # 控制台端口
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+    networks:
+      - seckill-network
+    restart: always
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 20s
+      retries: 3
+
+  # MinIO初始化，创建默认bucket
+  minio-init:
+    image: minio/mc:RELEASE.2023-06-28T21-54-17Z
+    container_name: seckill-minio-init
+    depends_on:
+      - minio
+    entrypoint: >
+      /bin/sh -c '
+      sleep 10;
+      /usr/bin/mc config host add myminio http://minio:9000 minioadmin minioadmin;
+      /usr/bin/mc mb --ignore-existing myminio/seckill;
+      /usr/bin/mc policy set public myminio/seckill;
+      exit 0;
+      '
+    networks:
+      - seckill-network
+
 volumes:
   mysql_data:
   redis_data:
   rocketmq_namesrv_data:
   rocketmq_broker_data:
+  es_data:
+  es_plugins:
+  minio_data:
 
 networks:
   seckill-network:
