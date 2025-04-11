@@ -1,4 +1,4 @@
-package com.itheima.distributedshopping;
+package com.itheima.ds;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.CommandLineRunner;
