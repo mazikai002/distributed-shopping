@@ -1,4 +1,4 @@
-package com.itheima.ds.domain;
+package com.itheima.ds.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * 优惠券订单
+ * 优惠券订单实体类
  */
 @Data
 @TableName("voucher_order")

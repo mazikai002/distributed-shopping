@@ -1,6 +1,6 @@
-package com.itheima.ds.utils;
+package com.itheima.ds.common.utils;
 
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillUser;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

@@ -1,7 +1,7 @@
 package com.itheima.ds.controller.v1;
 
 import com.itheima.ds.common.result.Result;
-import com.itheima.ds.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVo;
 import com.itheima.ds.service.GoodsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

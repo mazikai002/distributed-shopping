@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.itheima.ds.domain.User;
+import com.itheima.ds.model.entity.User;
 import com.itheima.ds.repository.UserRepository2;
 
 @Service

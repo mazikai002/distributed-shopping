@@ -1,10 +1,10 @@
 package com.itheima.ds.service.impl;
 
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillUser;
 import com.itheima.ds.redis.RedisService;
 import com.itheima.ds.service.LoginService;
-import com.itheima.ds.utils.JwtTokenUtil;
-import com.itheima.ds.exception.GlobalException;
+import com.itheima.ds.common.utils.JwtTokenUtil;
+import com.itheima.ds.common.exception.GlobalException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;

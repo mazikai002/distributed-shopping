@@ -5,10 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.itheima.ds.domain.SeckillGoods;
+import com.itheima.ds.model.entity.SeckillGoods;
 import com.itheima.ds.mapper.GoodsMapper;
 import com.itheima.ds.mapper.SeckillUserMapper;
-import com.itheima.ds.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVo;
 
 /**
  * 商品服务接口

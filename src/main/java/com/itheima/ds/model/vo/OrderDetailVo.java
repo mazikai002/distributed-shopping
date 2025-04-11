@@ -1,6 +1,6 @@
 package com.itheima.ds.vo;
 
-import com.itheima.ds.domain.OrderInfo;
+import com.itheima.ds.model.entity.OrderInfo;
 
 public class OrderDetailVo {
 	

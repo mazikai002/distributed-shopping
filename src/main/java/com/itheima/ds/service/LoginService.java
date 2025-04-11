@@ -1,6 +1,6 @@
 package com.itheima.ds.service;
 
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillUser;
 
 /**
  * 登录服务接口

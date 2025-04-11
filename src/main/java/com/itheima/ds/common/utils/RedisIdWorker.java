@@ -1,4 +1,4 @@
-package com.itheima.ds.utils;
+package com.itheima.ds.common.utils;
 
 import com.itheima.ds.redis.RedisService;
 import lombok.RequiredArgsConstructor;

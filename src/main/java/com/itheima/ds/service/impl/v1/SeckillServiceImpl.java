@@ -1,12 +1,12 @@
 package com.itheima.ds.service.impl.v1;
 
-import com.itheima.ds.domain.SeckillOrder;
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillOrder;
+import com.itheima.ds.model.entity.SeckillUser;
 import com.itheima.ds.service.ISeckillService;
 import com.itheima.ds.service.GoodsService;
 import com.itheima.ds.service.OrderService;
 import com.itheima.ds.service.SeckillService;
-import com.itheima.ds.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

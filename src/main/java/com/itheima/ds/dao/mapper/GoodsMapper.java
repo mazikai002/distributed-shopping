@@ -28,4 +28,4 @@ public interface GoodsMapper implements GoodsDao {
     
     @Override
     Goods getGoodsByGoodsId(@Param("goodsId") long goodsId);
-}
+} 

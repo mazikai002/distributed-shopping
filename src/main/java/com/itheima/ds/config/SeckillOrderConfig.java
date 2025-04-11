@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.itheima.ds.domain.SeckillGoods;
-import com.itheima.ds.domain.SeckillOrder;
+import com.itheima.ds.model.entity.SeckillGoods;
+import com.itheima.ds.model.entity.SeckillOrder;
 import com.itheima.ds.redisCluster.RedisService;
 import com.itheima.ds.redisCluster.SecKillActivityKey;
 import com.itheima.ds.service.OrderService;

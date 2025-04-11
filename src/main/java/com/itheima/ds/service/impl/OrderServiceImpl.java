@@ -1,12 +1,12 @@
 package com.itheima.ds.service.impl;
 
-import com.itheima.ds.domain.SeckillOrder;
-import com.itheima.ds.exception.GlobalException;
+import com.itheima.ds.model.entity.SeckillOrder;
+import com.itheima.ds.common.exception.GlobalException;
 import com.itheima.ds.mapper.OrderMapper;
 import com.itheima.ds.redis.OrderKey;
 import com.itheima.ds.redis.RedisService;
 import com.itheima.ds.service.OrderService;
-import com.itheima.ds.utils.RedisIdWorker;
+import com.itheima.ds.common.utils.RedisIdWorker;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

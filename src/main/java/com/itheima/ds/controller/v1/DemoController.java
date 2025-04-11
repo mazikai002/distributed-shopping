@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.itheima.ds.model.entity.User;
 import com.itheima.ds.redisCluster.RedisService;
-import com.itheima.ds.result.CodeMsg;
-import com.itheima.ds.result.Result;
+import com.itheima.ds.common.result.CodeMsg;
+import com.itheima.ds.common.result.Result;
 import com.itheima.ds.service.UserService;
  
 

@@ -16,16 +16,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.util.StringUtils;
 
 import com.itheima.ds.config.SecKillConfig;
-import com.itheima.ds.domain.SeckillGoods;
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillGoods;
+import com.itheima.ds.model.entity.SeckillUser;
 import com.itheima.ds.common.exception.GlobalException;
 import com.itheima.ds.mapper.SeckillUserMapper;
 import com.itheima.ds.redisCluster.RedisService;
 import com.itheima.ds.redisCluster.SecKillActivityKey;
-import com.itheima.ds.result.CodeMsg;
+import com.itheima.ds.common.result.CodeMsg;
 import com.itheima.ds.common.utils.MD5Util;
 import com.itheima.ds.common.utils.UUIDUtil;
-import com.itheima.ds.vo.LoginVo;
+import com.itheima.ds.model.vo.LoginVo;
 
 @Service
 public class SeckillUserService {

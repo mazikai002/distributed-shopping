@@ -13,7 +13,7 @@ import org.springframework.web.method.support.HandlerMethodArgumentResolver;
 import org.springframework.web.method.support.ModelAndViewContainer;
 import org.thymeleaf.util.StringUtils;
 
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillUser;
 import com.itheima.ds.service.SeckillUserService;
  
 

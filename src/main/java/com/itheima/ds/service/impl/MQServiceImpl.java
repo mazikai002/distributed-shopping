@@ -1,6 +1,6 @@
 package com.itheima.ds.service.impl;
 
-import com.itheima.ds.exception.GlobalException;
+import com.itheima.ds.common.exception.GlobalException;
 import com.itheima.ds.service.MQService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

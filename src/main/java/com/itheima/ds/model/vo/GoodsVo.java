@@ -3,7 +3,7 @@ package com.itheima.ds.vo;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import com.itheima.ds.domain.Goods;
+import com.itheima.ds.model.entity.Goods;
 
 /**
  * 秒杀商品VO

@@ -47,5 +47,4 @@ public interface SeckillUserMapper implements SeckillUserDao {
 
     @Select("SELECT g.*, sg.stock_count, sg.start_date, sg.end_date, sg.seckill_price, sg.version FROM seckill_goods sg LEFT JOIN goods g ON sg.goods_id = g.id")
     public List<SeckillGoods> getSeckillGoodsVoList();        
-
-}
+} 

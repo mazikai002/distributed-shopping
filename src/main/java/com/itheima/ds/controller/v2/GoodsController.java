@@ -2,7 +2,7 @@ package com.itheima.ds.controller.v2;
 
 import com.itheima.ds.common.result.Result;
 import com.itheima.ds.service.GoodsService;
-import com.itheima.ds.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;

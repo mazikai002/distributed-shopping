@@ -52,4 +52,4 @@ public interface UserMapper implements UserDao {
      */
     @Delete("delete from user where id = #{id}")
     int deleteById(@Param("id") long id);
-}
+} 

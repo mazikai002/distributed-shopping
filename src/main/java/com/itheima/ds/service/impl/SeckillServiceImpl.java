@@ -1,11 +1,11 @@
 package com.itheima.ds.service.impl;
 
-import com.itheima.ds.domain.SeckillVoucher;
-import com.itheima.ds.domain.VoucherOrder;
+import com.itheima.ds.model.entity.SeckillVoucher;
+import com.itheima.ds.model.entity.VoucherOrder;
 import com.itheima.ds.service.ISeckillService;
 import com.itheima.ds.service.ISeckillVoucherService;
 import com.itheima.ds.service.IVoucherOrderService;
-import com.itheima.ds.utils.RedisIdWorker;
+import com.itheima.ds.common.utils.RedisIdWorker;
 import com.itheima.ds.utils.UserHolder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

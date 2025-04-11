@@ -14,7 +14,7 @@ import java.util.List;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 
-import com.itheima.ds.domain.SeckillUser; 
+import com.itheima.ds.model.entity.SeckillUser; 
 
 public class UserUtil {
 	

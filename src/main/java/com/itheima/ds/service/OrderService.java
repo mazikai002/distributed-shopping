@@ -7,14 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
  
-import com.itheima.ds.domain.SeckillOrder;
-import com.itheima.ds.domain.SeckillUser;
-import com.itheima.ds.domain.OrderInfo;
+import com.itheima.ds.model.entity.SeckillOrder;
+import com.itheima.ds.model.entity.SeckillUser;
+import com.itheima.ds.model.entity.OrderInfo;
 import com.itheima.ds.mapper.OrderMapper;
 import com.itheima.ds.redisCluster.RedisService;
 import com.itheima.ds.redisCluster.SecKillActivityKey;
 import com.itheima.ds.common.utils.TimeUtil;
-import com.itheima.ds.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVo;
 
 /**
  * 订单服务接口

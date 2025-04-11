@@ -1,7 +1,7 @@
 package com.itheima.ds.controller.v2;
 
 import com.itheima.ds.common.result.Result;
-import com.itheima.ds.domain.SeckillOrder;
+import com.itheima.ds.model.entity.SeckillOrder;
 import com.itheima.ds.service.OrderService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

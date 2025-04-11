@@ -1,13 +1,13 @@
 package com.itheima.ds.service.impl;
 
-import com.itheima.ds.domain.Goods;
-import com.itheima.ds.domain.SeckillGoods;
-import com.itheima.ds.exception.GlobalException;
+import com.itheima.ds.model.entity.Goods;
+import com.itheima.ds.model.entity.SeckillGoods;
+import com.itheima.ds.common.exception.GlobalException;
 import com.itheima.ds.mapper.GoodsMapper;
 import com.itheima.ds.redis.GoodsKey;
 import com.itheima.ds.redis.RedisService;
 import com.itheima.ds.service.GoodsService;
-import com.itheima.ds.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,17 +1,17 @@
 package com.itheima.ds.service.impl.v2;
 
 import com.itheima.ds.common.exception.GlobalException;
-import com.itheima.ds.domain.SeckillOrder;
-import com.itheima.ds.domain.SeckillUser;
-import com.itheima.ds.domain.VoucherOrder;
+import com.itheima.ds.model.entity.SeckillOrder;
+import com.itheima.ds.model.entity.SeckillUser;
+import com.itheima.ds.model.entity.VoucherOrder;
 import com.itheima.ds.redis.GoodsKey;
 import com.itheima.ds.redis.RedisService;
 import com.itheima.ds.service.GoodsService;
 import com.itheima.ds.service.ISeckillService;
 import com.itheima.ds.service.OrderService;
-import com.itheima.ds.utils.RedisIdWorker;
+import com.itheima.ds.common.utils.RedisIdWorker;
 import com.itheima.ds.utils.UserHolder;
-import com.itheima.ds.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;

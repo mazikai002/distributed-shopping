@@ -1,6 +1,6 @@
 package com.itheima.ds.vo;
 
-import com.itheima.ds.domain.SeckillGoods;
+import com.itheima.ds.model.entity.SeckillGoods;
 
 public class SeckillOrderVo {
 	

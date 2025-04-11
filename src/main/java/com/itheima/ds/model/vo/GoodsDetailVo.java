@@ -1,6 +1,6 @@
 package com.itheima.ds.vo;
 
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillUser;
 
 public class GoodsDetailVo {
 
