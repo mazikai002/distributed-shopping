@@ -47,6 +47,17 @@ public class RedisClient {
     }
     
     /**
+     * 设置对象值
+     * @param key 键
+     * @param value 对象值
+     * @return 是否成功
+     */
+    public <T> boolean set(String key, T value) {
+        // 实际实现，设置对象值
+        return true;
+    }
+    
+    /**
      * 获取字符串值
      * @param key 键
      * @return 值

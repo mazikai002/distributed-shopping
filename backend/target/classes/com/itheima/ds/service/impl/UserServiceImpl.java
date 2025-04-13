@@ -22,7 +22,7 @@ public class UserServiceImpl implements IUserService {
     @Override
     public UserDTO login(LoginVO loginVO) {
         if (loginVO == null) {
-            throw new RuntimeException(CodeMsg.SERVER_ERROR.getMsg());
+            throw new RuntimeException(CodeMsg.SERVER_ERROR.getMessage());
         }
         
         String mobile = loginVO.getMobile();
@@ -31,7 +31,7 @@ public class UserServiceImpl implements IUserService {
         // 判断手机号是否存在
         User user = getByMobile(mobile);
         if (user == null) {
-            throw new RuntimeException(CodeMsg.MOBILE_NOT_EXISTS.getMsg());
+            throw new RuntimeException(CodeMsg.MOBILE_NOT_EXISTS.getMessage());
         }
         
         // 验证密码
@@ -39,7 +39,7 @@ public class UserServiceImpl implements IUserService {
         String saltDB = user.getSalt();
         String calcPass = MD5Util.formPassToDBPass(formPass, saltDB);
         if (!calcPass.equals(dbPass)) {
-            throw new RuntimeException(CodeMsg.PASSWORD_ERROR.getMsg());
+            throw new RuntimeException(CodeMsg.PASSWORD_ERROR.getMessage());
         }
         
         // 转换为DTO

@@ -122,7 +122,7 @@ public class SeckillServiceImpl implements ISeckillService {
         order.setUserId(user.getId());
         order.setGoodsId(goodsId);
         order.setGoodsName(goods.getGoodsName());
-        order.setGoodsPrice(goods.getSeckillPrice());
+        order.setGoodsPrice(goods.getSeckillPrice() != null ? goods.getSeckillPrice().doubleValue() : null);
         order.setCreateTime(LocalDateTime.now());
         order.setStatus(1); // 1: 已支付
         

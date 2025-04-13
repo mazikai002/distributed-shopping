@@ -5,113 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/common/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/common/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/common/utils/RedisIdWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/common/utils/RedisIdWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/component/cache/redis/KeyPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/component/cache/redis/KeyPrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/component/cache/redis/SecKillActivityKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/component/cache/redis/SecKillActivityKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/SeckillOrderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/SeckillOrderConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/ServiceConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/ServiceConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/SeckillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/SeckillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/OrderDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/OrderDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/SeckillGoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/SeckillGoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/GoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/SeckillUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/SeckillUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillGoods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/GoodsDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/GoodsDetailVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/GoodsVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/GoodsVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/LoginVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/LoginVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/OrderDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/OrderDetailVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/SeckillOrderVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/vo/SeckillOrderVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/redis/BasePrefix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/redis/GoodsKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/redis/KeyPrefix.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/redis/OrderKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/redis/RedisService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/redis/UserKey.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/GoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/SeckillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/SeckillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/SeckillUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/SeckillUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/LoginServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/LoginServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/SeckillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/component/cache/redis/RedisClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/component/cache/redis/RedisClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v1/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v1/SeckillServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v2/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v2/SeckillServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/result/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/result/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/cache/redis/KeyPrefix.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/cache/redis/KeyPrefix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/SeckillOrderConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/SeckillOrderConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/SeckillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/SeckillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/GoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/GoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/SeckillGoodsDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/SeckillGoodsDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/GoodsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/GoodsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/OrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/OrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/SeckillUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/SeckillUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/Goods.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/Goods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillGoods.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillGoods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/GoodsDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/GoodsDetailVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/GoodsVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/GoodsVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/LoginVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/LoginVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/OrderDetailVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/OrderDetailVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/SeckillOrderVo.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/SeckillOrderVo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/GoodsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/GoodsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/OrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/SeckillService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/SeckillService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/SeckillUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/SeckillUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/GoodsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/GoodsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/OrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/OrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/SeckillServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/v1/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/v1/SeckillServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/v2/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/v2/SeckillServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/@element-plus_icons-vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/@element-plus_icons-vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/_metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/_metadata.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/chunk-FBAGCOSL.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/chunk-FBAGCOSL.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/chunk-XFFFJQ6U.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/chunk-XFFFJQ6U.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/element-plus.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/element-plus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/element-plus.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/element-plus.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/vue-router.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/vue-router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/vue-router.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/vue-router.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/vue.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/node_modules/.vite/deps/vue.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/api/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/api/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/assets/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/assets/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/views/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/vite.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,7 +139,7 @@
       <workItem from="1744554218202" duration="629000" />
       <workItem from="1744554852610" duration="14000" />
       <workItem from="1744554873057" duration="91000" />
-      <workItem from="1744554970208" duration="5726000" />
+      <workItem from="1744554970208" duration="6042000" />
     </task>
     <servers />
   </component>
