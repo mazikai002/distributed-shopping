@@ -1,6 +1,6 @@
-# 分布式商城系统
+# 分布式秒杀商城系统
 
-基于Spring Boot + Redis + RocketMQ + ElasticSearch + MinIO构建的高性能分布式商城系统。
+基于Spring Boot + Redis + RocketMQ + ElasticSearch + MinIO构建的高性能分布式秒杀商城系统。
 
 ## 功能特点
 

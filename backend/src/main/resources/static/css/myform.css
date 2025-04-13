@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+#cd_zx  {position:absolute;width:625px;height:27px;z-index:4;left: 350px;top: 177px;display:none;}
+#cd_dir {position:absolute;width:753px;height:27px;z-index:1;top: 226px;left: 350px;display:none;}
+#cd_sfz {position:absolute;width:902px;height:35px;z-index:2;top: 264px;left: 285px;display:none;}
+#cd_fwq {position:absolute;width:676px;height:29px;z-index:3;left: 350px;top: 309px;display:none;}
+
+
+#cd_zx2 {position:absolute;width:625px;height:27px;z-index:4;left: 350px;top: 142px;display:none;}
+#cd_dir2 {position:absolute;width:753px;height:27px;z-index:1;left: 350px;top: 193px;display:none;}
+#cd_sfz2 {position:absolute;width:902px;height:35px;z-index:2;left: 285px;top: 221px;display:none;}
+#cd_fwq2 {position:absolute;width:676px;height:29px;z-index:3;left: 350px;top: 272px;display:none;}
+
+
+
+
+
+
+.infosource{ width:73%; }
+.subInfoType{font-size: 12px}
+
+#secondPart{position:absolute;width:549px;height:20px;z-index:1;display:block; }
+
+.complaint_time{height:50px;}
+.btn-batchDelete{background-color:#FF9999;}
+
+
