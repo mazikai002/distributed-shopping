@@ -18,13 +18,21 @@ public class MQController {
     @ApiOperation("发送消息")
     @PostMapping("/send")
     public Result<Void> sendMessage(@RequestBody String message) {
-        mqService.sendMessage(message);
+        mqService.sendAsyncMessage(message);
         return Result.success();
     }
 
-    @ApiOperation("接收消息")
-    @GetMapping("/receive")
-    public Result<String> receiveMessage() {
-        return Result.success(mqService.receiveMessage());
+    @ApiOperation("发送延迟消息")
+    @PostMapping("/send/delayed")
+    public Result<Void> sendDelayedMessage(@RequestBody String message, @RequestParam int delaySeconds) {
+        mqService.sendDelayedMessage(message, delaySeconds);
+        return Result.success();
+    }
+    
+    @ApiOperation("发送事务消息")
+    @PostMapping("/send/transaction")
+    public Result<Void> sendTransactionMessage(@RequestBody String message) {
+        mqService.sendTransactionMessage(message);
+        return Result.success();
     }
 } 

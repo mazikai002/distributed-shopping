@@ -19,6 +19,19 @@ public class LoginController {
     @ApiOperation("用户登录")
     @PostMapping("/do_login")
     public Result<String> doLogin(@RequestBody SeckillUser user) {
-        return Result.success(loginService.login(user));
+        return Result.success(loginService.loginWithToken(user));
+    }
+    
+    @ApiOperation("刷新Token")
+    @PostMapping("/refresh")
+    public Result<String> refreshToken(@RequestHeader("Authorization") String token) {
+        return Result.success(loginService.refreshToken(token));
+    }
+    
+    @ApiOperation("用户登出")
+    @PostMapping("/logout")
+    public Result<Void> logout(@RequestHeader("Authorization") String token) {
+        loginService.logout(token);
+        return Result.success();
     }
 } 
