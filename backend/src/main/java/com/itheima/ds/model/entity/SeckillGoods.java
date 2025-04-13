@@ -1,4 +1,4 @@
-package com.itheima.ds.domain;
+package com.itheima.ds.model.entity;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -40,7 +40,7 @@ public class SeckillGoods {
         return seckillPrice;
     }
 
-    public void serSeckillPrice(BigDecimal seckillPrice) {
+    public void setSeckillPrice(BigDecimal seckillPrice) {
         this.seckillPrice = seckillPrice;
     }
 

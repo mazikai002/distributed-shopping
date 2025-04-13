@@ -6,7 +6,7 @@ import com.itheima.ds.service.ISeckillService;
 import com.itheima.ds.service.ISeckillVoucherService;
 import com.itheima.ds.service.IVoucherOrderService;
 import com.itheima.ds.common.utils.RedisIdWorker;
-import com.itheima.ds.utils.UserHolder;
+import com.itheima.ds.common.utils.UserHolder;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

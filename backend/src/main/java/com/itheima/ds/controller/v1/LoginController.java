@@ -1,7 +1,7 @@
 package com.itheima.ds.controller.v1;
 
 import com.itheima.ds.common.result.Result;
-import com.itheima.ds.domain.SeckillUser;
+import com.itheima.ds.model.entity.SeckillUser;
 import com.itheima.ds.service.LoginService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

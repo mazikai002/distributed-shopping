@@ -1,17 +1,17 @@
 package com.itheima.ds.service.impl.v2;
 
 import com.itheima.ds.common.exception.GlobalException;
+import com.itheima.ds.component.cache.redis.RedisClient;
 import com.itheima.ds.model.entity.SeckillOrder;
 import com.itheima.ds.model.entity.SeckillUser;
 import com.itheima.ds.model.entity.VoucherOrder;
-import com.itheima.ds.redis.GoodsKey;
-import com.itheima.ds.redis.RedisService;
+
 import com.itheima.ds.service.GoodsService;
 import com.itheima.ds.service.ISeckillService;
 import com.itheima.ds.service.OrderService;
 import com.itheima.ds.common.utils.RedisIdWorker;
-import com.itheima.ds.utils.UserHolder;
-import com.itheima.ds.model.vo.GoodsVo;
+import com.itheima.ds.common.utils.UserHolder;
+import com.itheima.ds.model.vo.GoodsVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +35,7 @@ public class SeckillServiceImpl implements ISeckillService {
 
     private final GoodsService goodsService;
     private final OrderService orderService;
-    private final RedisService redisService;
+    private final RedisClient redisClient;
     private final RedisIdWorker redisIdWorker;
     
     private static final String STOCK_KEY = "seckill:stock:";
@@ -87,7 +87,7 @@ public class SeckillServiceImpl implements ISeckillService {
         
         // 1. 判断当前用户是否已经秒杀过该商品（从Redis中查询）
         String orderKey = SECKILL_ORDER_KEY + user.getId() + ":" + goodsId;
-        boolean hasOrder = redisService.exists(orderKey);
+        boolean hasOrder = redisClient.exists(orderKey);
         if (hasOrder) {
             throw new GlobalException("重复秒杀");
         }
@@ -113,7 +113,7 @@ public class SeckillServiceImpl implements ISeckillService {
         log.info("Redis库存扣减成功, goodsId: {}, 剩余库存: {}", goodsId, result);
         
         // 3. 获取商品信息
-        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
+        GoodsVO goods = goodsService.getGoodsVoByGoodsId(goodsId);
         
         // 4. 创建订单（异步方式）
         SeckillOrder order = new SeckillOrder();
@@ -127,7 +127,7 @@ public class SeckillServiceImpl implements ISeckillService {
         order.setStatus(1); // 1: 已支付
         
         // 5. 保存订单到Redis
-        redisService.set(orderKey, order);
+        redisClient.set(orderKey, order);
         
         // 6. 使用Redis创建订单
         Long orderIdFromRedis = orderService.createOrderWithRedis(order);
@@ -164,7 +164,7 @@ public class SeckillServiceImpl implements ISeckillService {
      * 将商品库存加载到Redis中
      */
     public void preloadStockToRedis(Long goodsId) {
-        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
+        GoodsVO goods = goodsService.getGoodsVoByGoodsId(goodsId);
         if (goods != null && goods.getStockCount() > 0) {
             // 将库存设置到Redis
             String stockKey = STOCK_KEY + goodsId;

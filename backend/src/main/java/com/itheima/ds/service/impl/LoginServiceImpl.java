@@ -1,7 +1,7 @@
 package com.itheima.ds.service.impl;
 
+import com.itheima.ds.component.cache.redis.RedisClient;
 import com.itheima.ds.model.entity.SeckillUser;
-import com.itheima.ds.redis.RedisService;
 import com.itheima.ds.service.LoginService;
 import com.itheima.ds.common.utils.JwtTokenUtil;
 import com.itheima.ds.common.exception.GlobalException;
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit;
 @RequiredArgsConstructor
 public class LoginServiceImpl implements LoginService {
 
-    private final RedisService redisService;
+    private final RedisClient redisClient;
     private final JwtTokenUtil jwtTokenUtil;
     
     @Value("${token.expiration:3600}")
@@ -45,7 +45,7 @@ public class LoginServiceImpl implements LoginService {
         
         // 将token存入Redis
         String key = TOKEN_PREFIX + token;
-        redisService.set(key, user.getId().toString(), tokenExpiration);
+        redisClient.set(key, user.getId().toString(), tokenExpiration);
         
         return token;
     }
@@ -64,7 +64,7 @@ public class LoginServiceImpl implements LoginService {
         
         // 将token存入Redis，用于后续验证
         String key = TOKEN_PREFIX + token;
-        redisService.set(key, user.getId().toString(), tokenExpiration);
+        redisClient.set(key, user.getId().toString(), tokenExpiration);
         
         return token;
     }
@@ -77,7 +77,7 @@ public class LoginServiceImpl implements LoginService {
         
         // 验证token是否存在
         String key = TOKEN_PREFIX + token;
-        String userId = redisService.get(key);
+        String userId = redisClient.get(key);
         if (StringUtils.isEmpty(userId)) {
             throw new GlobalException("token已过期");
         }
@@ -91,11 +91,11 @@ public class LoginServiceImpl implements LoginService {
         String newToken = jwtTokenUtil.generateToken(user);
         
         // 删除旧token
-        redisService.delete(key);
+        redisClient.delete(key);
         
         // 存储新token
         String newKey = TOKEN_PREFIX + newToken;
-        redisService.set(newKey, userId, tokenExpiration);
+        redisClient.set(newKey, userId, tokenExpiration);
         
         return newToken;
     }
@@ -108,6 +108,6 @@ public class LoginServiceImpl implements LoginService {
         
         // 删除Redis中的token
         String key = TOKEN_PREFIX + token;
-        redisService.delete(key);
+        redisClient.delete(key);
     }
 } 

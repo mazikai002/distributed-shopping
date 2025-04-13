@@ -19,13 +19,13 @@ import com.itheima.ds.config.SecKillConfig;
 import com.itheima.ds.model.entity.SeckillGoods;
 import com.itheima.ds.model.entity.SeckillUser;
 import com.itheima.ds.common.exception.GlobalException;
-import com.itheima.ds.mapper.SeckillUserMapper;
-import com.itheima.ds.redisCluster.RedisService;
-import com.itheima.ds.redisCluster.SecKillActivityKey;
+import com.itheima.ds.dao.mapper.SeckillUserMapper;
+import com.itheima.ds.component.cache.redis.RedisClient;
+import com.itheima.ds.component.cache.redis.SecKillActivityKey;
 import com.itheima.ds.common.result.CodeMsg;
 import com.itheima.ds.common.utils.MD5Util;
 import com.itheima.ds.common.utils.UUIDUtil;
-import com.itheima.ds.model.vo.LoginVo;
+import com.itheima.ds.model.vo.LoginVO;
 
 @Service
 public class SeckillUserService {
@@ -35,7 +35,7 @@ public class SeckillUserService {
 	private SeckillUserMapper seckillUserMapper;
 	
 	@Autowired
-	private RedisService redisService;
+	private RedisClient redisClient;
 	
 	@Autowired
 	private SeckillUserService seckillUserService;
@@ -54,13 +54,13 @@ public class SeckillUserService {
 	
 	public SeckillUser getUserById(long id){
 		  //取缓存
-		SeckillUser user = redisService.get(SecKillActivityKey.getById, ""+id, SeckillUser.class);
+		SeckillUser user = redisClient.get(SecKillActivityKey.getById, ""+id, SeckillUser.class);
 		if(user!=null) return user;
 		
 		//若用户为空，则需要取数据库
 		user = this.seckillUserMapper.getUserById(id);
 		if(user!=null){
-			redisService.set(SecKillActivityKey.getById, ""+id, user);
+			redisClient.set(SecKillActivityKey.getById, ""+id, user);
 		}
 		return user;
 	} 
@@ -79,10 +79,10 @@ public class SeckillUserService {
 		
 		//处理缓存,否则会出现缓存不一致的问题
 		    //删除的原因是
-		redisService.delete(SecKillActivityKey.getById, ""+id);
+		redisClient.delete(SecKillActivityKey.getById, ""+id);
 		  //如若删除token 则无法登录，此处只需要更新token
 		user.setPassword(toBeUpdate.getPassword());
-		redisService.set(SecKillActivityKey.token, token,user);
+		redisClient.set(SecKillActivityKey.token, token,user);
 		return true;
 	}
 
@@ -111,8 +111,8 @@ public class SeckillUserService {
 		    generateCookie(response,token,user);
 		    
 		    
-		     LoginVo.getInstance().setUserId(user.getId()); 
-		     LoginVo.getInstance().setToken(token); 
+		     LoginVO.getInstance().setUserId(user.getId());
+		     LoginVO.getInstance().setToken(token);
 		     
 		     
 		    this.seckillUserService.getUserInfoByToken(response,token);
@@ -141,7 +141,7 @@ public class SeckillUserService {
 		//生成cookie
 		  //String token = UUIDUtil.uuid();
 		   //token对应的用户信息写入redis
-		  redisService.set(SecKillActivityKey.token, token, user);
+		  redisClient.set(SecKillActivityKey.token, token, user);
 		  Cookie cookie = new Cookie(SecKillConfig.COOKIE_NAME_TOKEN,token); 
 		  cookie.setMaxAge(SecKillActivityKey.token.expireSeconds()); //cookie有效期
 		  cookie.setPath("/");
@@ -154,7 +154,7 @@ public class SeckillUserService {
 			return null;
 		}
 		//System.out.println("token:"+token);
-		SeckillUser user = redisService.get(SecKillActivityKey.token, token, SeckillUser.class);
+		SeckillUser user = redisClient.get(SecKillActivityKey.token, token, SeckillUser.class);
 		//延长有效期 
 		 if(user!=null){
 			 //System.out.println("user==null: "+ (user==null));

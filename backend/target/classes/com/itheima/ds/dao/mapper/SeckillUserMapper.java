@@ -13,7 +13,7 @@ import com.itheima.ds.model.entity.SeckillGoods;
  * 秒杀用户Mapper接口，实现SeckillUserDao接口
  */
 @Mapper
-public interface SeckillUserMapper implements SeckillUserDao {
+public interface SeckillUserMapper extends SeckillUserDao {
 
     @Override
     @Select("SELECT * FROM seckill_user WHERE id = #{id}")

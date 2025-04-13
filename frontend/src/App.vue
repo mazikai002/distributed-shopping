@@ -29,7 +29,7 @@
       </div>
       <div class="header-main container">
         <div class="logo">
-          <img src="@/assets/logo.png" alt="Logo" />
+          <img src="@/assets/logo.svg" alt="Flash Mall" />
         </div>
         <div class="search">
           <el-input
@@ -143,8 +143,19 @@ const searchQuery = ref('')
   gap: 40px;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .logo img {
   height: 40px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
 }
 
 .search {

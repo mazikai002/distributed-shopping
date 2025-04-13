@@ -8,6 +8,8 @@ import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Api(tags = "订单接口")
 @RestController
 @RequestMapping("/order/v2")
@@ -30,7 +32,7 @@ public class OrderController {
     
     @ApiOperation("获取用户订单列表")
     @GetMapping("/user/{userId}")
-    public Result<SeckillOrder> getUserOrders(@PathVariable Long userId) {
+    public Result<List<SeckillOrder>> getUserOrders(@PathVariable Long userId) {
         return Result.success(orderService.getUserOrders(userId));
     }
 } 

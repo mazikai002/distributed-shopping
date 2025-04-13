@@ -6,7 +6,7 @@ import com.itheima.ds.service.ISeckillService;
 import com.itheima.ds.service.GoodsService;
 import com.itheima.ds.service.OrderService;
 import com.itheima.ds.service.SeckillService;
-import com.itheima.ds.model.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,7 +29,7 @@ public class SeckillServiceImpl implements ISeckillService {
         }
 
         // 判断库存
-        GoodsVo goods = goodsService.getGoodsVoByGoodsId(goodsId);
+        GoodsVO goods = goodsService.getGoodsVoByGoodsId(goodsId);
         int stock = goods.getStockCount();
         if (stock <= 0) {
             throw new RuntimeException("秒杀已结束");

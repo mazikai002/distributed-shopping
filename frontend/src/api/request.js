@@ -22,8 +22,14 @@ service.interceptors.request.use(
 service.interceptors.response.use(
   response => {
     const res = response.data
-    // 这里可以根据后端的响应结构进行调整
-    if (res.code !== 200) {
+    
+    // 如果是二进制数据，直接返回
+    if (response.config.responseType === 'blob') {
+      return response
+    }
+    
+    // 这里根据实际后端返回的数据结构进行调整
+    if (res.code && res.code !== 200) {
       ElMessage({
         message: res.message || 'Error',
         type: 'error',
@@ -36,8 +42,25 @@ service.interceptors.response.use(
   },
   error => {
     console.log('err' + error)
+    // 处理取消请求的情况
+    if (axios.isCancel(error)) {
+      return Promise.reject(error)
+    }
+    
+    // 处理网络错误
+    if (!error.response) {
+      ElMessage({
+        message: '网络错误，请检查您的网络连接',
+        type: 'error',
+        duration: 5 * 1000
+      })
+      return Promise.reject(error)
+    }
+    
+    // 处理后端返回的错误
+    const errorMessage = error.response.data?.message || '请求失败，请重试'
     ElMessage({
-      message: error.message,
+      message: errorMessage,
       type: 'error',
       duration: 5 * 1000
     })

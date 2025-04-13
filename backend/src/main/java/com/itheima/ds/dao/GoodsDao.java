@@ -2,7 +2,7 @@ package com.itheima.ds.dao;
 
 import com.itheima.ds.model.entity.Goods;
 import com.itheima.ds.model.entity.SeckillGoods;
-import com.itheima.ds.model.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVO;
 import java.util.List;
 
 /**
@@ -12,12 +12,12 @@ public interface GoodsDao {
     /**
      * 获取商品列表
      */
-    List<GoodsVo> getGoodsVoList();
+    List<GoodsVO> getGoodsVoList();
     
     /**
      * 根据商品ID获取商品详情
      */
-    GoodsVo getGoodsVoByGoodsId(long goodsId);
+    GoodsVO getGoodsVoByGoodsId(long goodsId);
     
     /**
      * 减少库存
@@ -33,4 +33,12 @@ public interface GoodsDao {
      * 根据商品ID获取商品
      */
     Goods getGoodsByGoodsId(long goodsId);
+    
+    /**
+     * 更新商品库存
+     * @param goodsId 商品ID
+     * @param newStock 新库存数量
+     * @return 影响行数
+     */
+    int updateStock(Long goodsId, Integer newStock);
 } 

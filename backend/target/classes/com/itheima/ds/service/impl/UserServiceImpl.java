@@ -6,18 +6,18 @@ import com.itheima.ds.common.result.CodeMsg;
 import com.itheima.ds.model.dto.UserDTO;
 import com.itheima.ds.model.entity.User;
 import com.itheima.ds.model.vo.LoginVO;
-import com.itheima.ds.repository.UserRepository;
-import com.itheima.ds.service.UserService;
-import com.itheima.ds.util.MD5Util;
+import com.itheima.ds.dao.mapper.UserMapper;
+import com.itheima.ds.service.IUserService;
+import com.itheima.ds.common.utils.MD5Util;
 
 /**
  * 用户服务实现类
  */
 @Service
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl implements IUserService {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserMapper userMapper;
     
     @Override
     public UserDTO login(LoginVO loginVO) {
@@ -53,12 +53,12 @@ public class UserServiceImpl implements UserService {
     
     @Override
     public User getById(long id) {
-        return userRepository.findById(id);
+        return userMapper.findById(id);
     }
     
     @Override
     public User getByMobile(String mobile) {
-        return userRepository.findByMobile(mobile);
+        return userMapper.findByMobile(mobile);
     }
     
     @Override
@@ -66,6 +66,6 @@ public class UserServiceImpl implements UserService {
         if (user == null || user.getId() == null) {
             return false;
         }
-        return userRepository.update(user) > 0;
+        return userMapper.update(user) > 0;
     }
 }

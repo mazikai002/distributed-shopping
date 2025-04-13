@@ -19,6 +19,6 @@ public class LoginController {
     @ApiOperation("用户登录")
     @PostMapping("/do_login")
     public Result<String> doLogin(@RequestBody SeckillUser user) {
-        return Result.ok(loginService.login(user));
+        return Result.success(loginService.login(user));
     }
 } 

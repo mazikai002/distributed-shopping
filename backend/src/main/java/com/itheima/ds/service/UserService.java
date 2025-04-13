@@ -5,31 +5,31 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.itheima.ds.model.entity.User;
-import com.itheima.ds.repository.UserRepository2;
+import com.itheima.ds.dao.mapper.UserMapper;
 
 @Service
 public class UserService {
 
 	@Autowired
-	private UserRepository2 userMapper;
+	private UserMapper userMapper;
 	
 	
 	public User getUserById(int id){
-		return userMapper.getUserById(id);
+		return userMapper.findById(id);
 	}
 
 
 	// @Transactional
 	public boolean tx() { 
 		User u1 = new User();
-		u1.setId(2);
-		u1.setUsername("222"); 
-		userMapper.insert(u1);
+		u1.setId(2L);
+		u1.setNickname("222");
+		userMapper.save(u1);
 		
 		User u2 = new User();
-		u2.setId(1);
-		u2.setUsername("1111"); 
-		userMapper.insert(u2);
+		u2.setId(1L);
+		u2.setNickname("1111");
+		userMapper.save(u2);
 		return true;
 	}
 
@@ -37,20 +37,14 @@ public class UserService {
 	@Transactional
 	public void txDecrease() {
 		 
-			 User u1 = new User();
-				u1.setId(1);
-				u1.setUsername("222"); 
-				u1.setPassword("123");
-				u1.setPhone("12345679");
+		User u1 = new User();
+		u1.setId(1L);
+		u1.setNickname("222");
+		u1.setPassword("123");
 				
-			    this.userMapper.decrease(u1);
-			    User user = this.userMapper.getUserById(u1.getId());
-			   System.out.println("flag="+user.getFlag()); 
-			 
-			  
-		
-	     if(user.getFlag()<4) throw new RuntimeException();
-		
+		this.userMapper.update(u1);
+		User user = this.userMapper.findById(u1.getId());
+		if(user.getLoginCount() != null && user.getLoginCount() < 4) throw new RuntimeException();
 	}
 	
 }

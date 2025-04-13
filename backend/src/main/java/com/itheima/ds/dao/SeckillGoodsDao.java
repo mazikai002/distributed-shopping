@@ -21,4 +21,19 @@ public interface SeckillGoodsDao {
      * 获取秒杀商品VO列表
      */
     List<SeckillGoods> getSeckillGoodsVoList();
+    
+    /**
+     * 获取秒杀商品版本号
+     * @param goodsId 商品ID
+     * @return 版本号
+     */
+    long getSeckillGoodsVersion(Long goodsId);
+    
+    /**
+     * 减少库存，使用乐观锁
+     * @param goodsId 商品ID
+     * @param version 版本号
+     * @return 影响的行数
+     */
+    int reduceStockByVersion(Long goodsId, long version);
 } 

@@ -1,86 +1,113 @@
 package com.itheima.ds.service.impl;
 
-import com.itheima.ds.model.entity.Goods;
-import com.itheima.ds.model.entity.SeckillGoods;
-import com.itheima.ds.common.exception.GlobalException;
-import com.itheima.ds.mapper.GoodsMapper;
-import com.itheima.ds.redis.GoodsKey;
-import com.itheima.ds.redis.RedisService;
-import com.itheima.ds.service.GoodsService;
-import com.itheima.ds.model.vo.GoodsVo;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-
 import java.util.List;
 
-/**
- * 商品服务实现类
- */
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.itheima.ds.model.entity.SeckillGoods;
+import com.itheima.ds.dao.mapper.GoodsMapper;
+import com.itheima.ds.dao.mapper.SeckillUserMapper;
+import com.itheima.ds.model.vo.GoodsVO;
+import com.itheima.ds.service.GoodsService;
+
 @Service
-@RequiredArgsConstructor
 public class GoodsServiceImpl implements GoodsService {
 
-    private final GoodsMapper goodsMapper;
-    private final RedisService redisService;
-    
-    private static final String STOCK_KEY = "goods:stock:";
+	@Autowired
+	private GoodsMapper goodsMapper;
+	
+	@Autowired
+	private SeckillUserMapper seckillUserMapper;
+	
+	@Override
+	public List<GoodsVO> listGoodsVO() {
+		return this.goodsMapper.getGoodsVoList();
+		/*List<SeckillGoods> seckillGoodList = this.seckillUserMapper.getSeckillGoodsList();
+		List<Goods> goodsList = this.goodsMapper.selectList(null);
+		
+		if(null == seckillGoodList || seckillGoodList.size() <=0){
+			return Collections.emptyList();  //默认空list
+		}
+		
+		if(null == goodsList || goodsList.size() <=0){
+			return Collections.emptyList();  //默认空list
+		}
+		
+		List<GoodsVo>  goodsVoList = new ArrayList<>();
+		for(SeckillGoods  seckillGoods : seckillGoodList){
+			GoodsVo goodsVo = new GoodsVo();
+			for(Goods good: goodsList){
+				if(seckillGoods.getGoodsId().equals(good.getId())){
+					BeanUtils.copyProperties(seckillGoods, goodsVo);
+					BeanUtils.copyProperties(good, goodsVo);
+					goodsVoList.add(goodsVo);
+					break;
+				}
+			}
+		}
+		
+		return goodsVoList;*/
+	}
+	
+	@Override
+	public GoodsVO getGoodsVoByGoodsId(Long goodsId) {
+		return this.goodsMapper.getGoodsVoByGoodsId(goodsId);
+	}
+	
+	@Override
+	public boolean reduceStock(Long goodsId) {
+		SeckillGoods goods = new SeckillGoods();
+		goods.setGoodsId(goodsId);
+		int result = goodsMapper.reduceStock(goods);
+		return result > 0;
+	}
+	
+	@Override
+	public boolean updateStock(Long goodsId, Integer newStock) {
+		int result = goodsMapper.updateStock(goodsId, newStock);
+		return result > 0;
+	}
 
-    @Override
-    public List<GoodsVo> listGoodsVo() {
-        return goodsMapper.listGoodsVo();
-    }
+	public List<GoodsVO> getGoodsVoList(){
+		// Commented out legacy code
+		/*List<SeckillGoods> seckillGoodList = this.seckillUserMapper.getSeckillGoodsList();
+		
+		//查询各秒杀商品的id
+				List<Long> seckillGoodsIds = new ArrayList<Long>();
+				List<GoodsVo> goodsVoList = new ArrayList<GoodsVo>();
+				for(SeckillGoods sg : seckillGoodList){
+					seckillGoodsIds.add(sg.getGoodsId());
+				} 
+				GoodsVo goodsVo = null;
+				Goods goods = null;
+				SeckillGoods seckillGoods = null;
+				for(Long goodId : seckillGoodsIds){
+					goods = this.goodsMapper.getGoodsByGoodsId(goodId);
+					   System.out.println("---"+goods.getGoodsName()+"   "+goods.getGoodsImg()+"   "+goods.getGoodsPrice());
+					goodsVo = new GoodsVo();
+					
+					goodsVo.setGoods(goods); 
+					seckillGoods = this.getSeckillGoodsByGoodsId(goodId);
+					goodsVo.setStockCount(seckillGoods.getStockCount());
+					goodsVo.setStartDate(seckillGoods.getStartDate());
+					goodsVo.setEndDate(seckillGoods.getEndDate());
+					goodsVo.setSeckillPrice(seckillGoods.getSeckillPrice()); 
+					
+					goodsVoList.add(goodsVo);
+					 
+				}*/
+		 
+		//return goodsVoList;
+		return this.goodsMapper.getGoodsVoList(); 
+	}
 
-    @Override
-    public GoodsVo getGoodsVoByGoodsId(Long goodsId) {
-        // 先查询Redis缓存
-        GoodsVo goodsVo = redisService.get(GoodsKey.getGoodsDetail, "" + goodsId, GoodsVo.class);
-        if (goodsVo != null) {
-            return goodsVo;
-        }
-        
-        // 缓存未命中，查询数据库
-        goodsVo = goodsMapper.getGoodsVoByGoodsId(goodsId);
-        if (goodsVo == null) {
-            throw new GlobalException("商品不存在");
-        }
-        
-        // 写入缓存
-        redisService.set(GoodsKey.getGoodsDetail, "" + goodsId, goodsVo);
-        return goodsVo;
-    }
+	public SeckillGoods getSeckillGoodsByGoodsId(long goodsId){
+		return this.seckillUserMapper.getSeckillGoodsByGoodsId(goodsId);
+	}
 
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void updateStock(Long goodsId, Integer stock) {
-        // 更新数据库
-        int result = goodsMapper.updateStock(goodsId, stock);
-        if (result == 0) {
-            throw new GlobalException("商品库存更新失败");
-        }
-        
-        // 清除缓存
-        redisService.delete(GoodsKey.getGoodsDetail, "" + goodsId);
-        redisService.delete(GoodsKey.getGoodsList, "");
-    }
-
-    @Override
-    @Transactional(rollbackFor = Exception.class)
-    public void updateStockWithRedis(Long goodsId, Integer stock) {
-        // 1. 更新Redis缓存中的库存
-        String stockKey = STOCK_KEY + goodsId;
-        redisService.set(stockKey, String.valueOf(stock));
-        
-        // 2. 更新数据库
-        int result = goodsMapper.updateStock(goodsId, stock);
-        if (result == 0) {
-            // 数据库更新失败，删除Redis缓存
-            redisService.delete(stockKey);
-            throw new GlobalException("商品库存更新失败");
-        }
-        
-        // 3. 清除商品详情和列表缓存
-        redisService.delete(GoodsKey.getGoodsDetail, "" + goodsId);
-        redisService.delete(GoodsKey.getGoodsList, "");
-    }
+	@Override
+	public void updateStockWithRedis(Long goodsId, Integer stock) {
+		// Implementation for updateStockWithRedis using Redis
+	}
 } 

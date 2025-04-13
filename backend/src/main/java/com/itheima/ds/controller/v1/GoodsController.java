@@ -1,7 +1,7 @@
 package com.itheima.ds.controller.v1;
 
 import com.itheima.ds.common.result.Result;
-import com.itheima.ds.model.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVO;
 import com.itheima.ds.service.GoodsService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -18,7 +18,7 @@ public class GoodsController {
 
     @ApiOperation("获取商品详情")
     @GetMapping("/{goodsId}")
-    public Result<GoodsVo> getGoods(@PathVariable Long goodsId) {
+    public Result<GoodsVO> getGoods(@PathVariable Long goodsId) {
         return Result.success(goodsService.getGoodsVoByGoodsId(goodsId));
     }
 
@@ -26,6 +26,6 @@ public class GoodsController {
     @PutMapping("/{goodsId}/stock")
     public Result<Void> updateStock(@PathVariable Long goodsId, @RequestParam Integer stock) {
         goodsService.updateStock(goodsId, stock);
-        return Result.success("更新库存成功");
+        return Result.success("更新库存成功", null);
     }
 } 

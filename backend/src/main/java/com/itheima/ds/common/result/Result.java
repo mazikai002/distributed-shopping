@@ -1,6 +1,7 @@
-package com.itheima.backend.common;
+package com.itheima.ds.common.result;
 
-import com.itheima.backend.common.constant.CommonConstant;
+import com.itheima.ds.common.constant.CommonConstant;
+import com.itheima.ds.common.result.CodeMsg;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
@@ -73,6 +74,10 @@ public class Result<T> {
     public static <T> Result<T> success(String message, T data) {
         return new Result<>(CommonConstant.SUCCESS_CODE, message, data);
     }
+
+//    public static <T> Result<T> success(String message) {
+//        return new Result<>(CommonConstant.SUCCESS_CODE, message, null);
+//    }
     
     /**
      * 失败响应
@@ -93,6 +98,13 @@ public class Result<T> {
      */
     public static <T> Result<T> error(int code, String message) {
         return new Result<>(code, message, null);
+    }
+    
+    /**
+     * 失败响应（带CodeMsg）
+     */
+    public static <T> Result<T> error(CodeMsg codeMsg) {
+        return new Result<>(codeMsg.getCode(), codeMsg.getMessage(), null);
     }
     
     /**

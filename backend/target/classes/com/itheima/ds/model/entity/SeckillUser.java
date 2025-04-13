@@ -3,8 +3,9 @@ package com.itheima.ds.model.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -25,13 +26,15 @@ public class SeckillUser implements Serializable {
     /**
      * 用户名
      */
-    @NotBlank(message = "用户名不能为空")
+    @NotNull(message = "用户名不能为空")
+    @NotEmpty(message = "用户名不能为空")
     private String username;
     
     /**
      * 密码
      */
-    @NotBlank(message = "密码不能为空")
+    @NotNull(message = "密码不能为空")
+    @NotEmpty(message = "密码不能为空")
     private String password;
     
     /**
@@ -47,7 +50,8 @@ public class SeckillUser implements Serializable {
     /**
      * 手机号
      */
-    @NotBlank(message = "手机号不能为空")
+    @NotNull(message = "手机号不能为空")
+    @NotEmpty(message = "手机号不能为空")
     @Pattern(regexp = "^1[3-9]\\d{9}$", message = "手机号格式错误")
     private String mobile;
     

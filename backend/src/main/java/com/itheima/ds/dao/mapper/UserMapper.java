@@ -8,7 +8,7 @@ import com.itheima.ds.model.entity.User;
  * 用户Mapper接口，实现UserDao接口
  */
 @Mapper
-public interface UserMapper implements UserDao {
+public interface UserMapper extends UserDao {
     
     @Override
     @Select("select * from user where id = #{id}")

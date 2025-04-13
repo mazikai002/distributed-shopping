@@ -31,7 +31,7 @@ public interface OrderDao {
     /**
      * 删除秒杀订单
      */
-    void deleteSeckillOrderByGoodIdAndUserId(long goodsId, long userId);
+    void deleteSeckillOrderByGoodIdAndUserId(Long goodsId, Long userId);
     
     /**
      * 获取所有秒杀订单

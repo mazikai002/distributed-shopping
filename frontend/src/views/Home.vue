@@ -78,7 +78,7 @@
 import { ref, onMounted } from 'vue'
 import { Timer } from '@element-plus/icons-vue'
 import { getSeckillList, doSeckill, getStock } from '@/api/seckill'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElLoading } from 'element-plus'
 
 // 模拟数据
 const banners = ref([
@@ -106,16 +106,64 @@ const categories = ref([
 
 const activeCategory = ref('1')
 
+const loading = ref(false)
 const seckillProducts = ref([])
 const products = ref([])
 
 // 获取秒杀商品列表
 const fetchSeckillProducts = async () => {
+  const loadingInstance = ElLoading.service({
+    text: '加载中...'
+  })
   try {
     const res = await getSeckillList()
-    seckillProducts.value = res.data
+    if (res.data) {
+      seckillProducts.value = res.data
+    } else {
+      // 如果后端未启动或返回数据为空，使用模拟数据
+      seckillProducts.value = [
+        {
+          id: 1,
+          imageUrl: 'https://via.placeholder.com/200x200',
+          name: '示例商品1',
+          seckillPrice: 999,
+          originalPrice: 1999,
+          stock: 100
+        },
+        {
+          id: 2,
+          imageUrl: 'https://via.placeholder.com/200x200',
+          name: '示例商品2',
+          seckillPrice: 888,
+          originalPrice: 1888,
+          stock: 50
+        }
+      ]
+    }
   } catch (error) {
     console.error('获取秒杀商品列表失败:', error)
+    ElMessage.error('获取商品列表失败，已显示示例数据')
+    // 使用模拟数据
+    seckillProducts.value = [
+      {
+        id: 1,
+        imageUrl: 'https://via.placeholder.com/200x200',
+        name: '示例商品1',
+        seckillPrice: 999,
+        originalPrice: 1999,
+        stock: 100
+      },
+      {
+        id: 2,
+        imageUrl: 'https://via.placeholder.com/200x200',
+        name: '示例商品2',
+        seckillPrice: 888,
+        originalPrice: 1888,
+        stock: 50
+      }
+    ]
+  } finally {
+    loadingInstance.close()
   }
 }
 

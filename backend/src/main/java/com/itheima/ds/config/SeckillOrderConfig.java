@@ -2,13 +2,14 @@ package com.itheima.ds.config;
 
 import java.util.List;
 
+import com.itheima.ds.model.entity.SeckillGoods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.itheima.ds.model.entity.SeckillGoods;
 import com.itheima.ds.model.entity.SeckillOrder;
-import com.itheima.ds.redisCluster.RedisService;
-import com.itheima.ds.redisCluster.SecKillActivityKey;
+import com.itheima.ds.component.cache.redis.RedisClient;
+import com.itheima.ds.component.cache.redis.SecKillActivityKey;
 import com.itheima.ds.service.OrderService;
 import com.itheima.ds.service.SeckillService;
 
@@ -21,7 +22,7 @@ public class SeckillOrderConfig {
 	private SeckillService seckillService;
 	
 	@Autowired
-	private RedisService redisService;
+	private RedisClient redisClient;
 	
 	    
 	 
@@ -37,16 +38,16 @@ public class SeckillOrderConfig {
 		 SeckillGoods goods = null;
 		 int stockCount = 0;
 		 for(SeckillOrder seckillOrder:seckillOrderlist){
-			 order = this.redisService.get(SecKillActivityKey.getSecKillOrderByUidGid, ""+seckillOrder.getUserId()+"_"+seckillOrder.getGoodsId(), SeckillOrder.class);
+			 order = this.redisClient.get(SecKillActivityKey.getSecKillOrderByUidGid, ""+seckillOrder.getUserId()+"_"+seckillOrder.getGoodsId(), SeckillOrder.class);
 		     if(order==null){
 		      //取消订单
 		      System.out.println("失效订单信息：    goodsId:"+seckillOrder.getGoodsId() + "  userId:"+seckillOrder.getUserId());
 		    	 
 		      //删除缓存中秒杀商品
-		 	  this.redisService.delete(SecKillActivityKey.getSecKillOrderByUidGid, ""+seckillOrder.getOrderId()+"_"+seckillOrder.getGoodsId()); 
+		 	  this.redisClient.delete(SecKillActivityKey.getSecKillOrderByUidGid, ""+seckillOrder.getOrderId()+"_"+seckillOrder.getGoodsId());
 		 	      
 		 	  //订单取消
-		 	  this.orderService.deleteOrder(seckillOrder.getGoodsId(), seckillOrder.getUserId()); 
+		 	  this.orderService.deleteOrder(seckillOrder.getGoodsId(), seckillOrder.getUserId());
 		 	     
 		 	  //库存还原
 		 	     /**

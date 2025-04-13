@@ -6,7 +6,7 @@ import com.itheima.ds.common.constant.RedisConstants;
  * 商品秒杀活动前缀类
  * @author Administrator
  */
-public class SecKillActivityKey implements KeyPrefix {
+public class SecKillActivityKey implements com.itheima.ds.component.cache.redis.KeyPrefix {
 
     private int expireSeconds;
     private String prefix;
@@ -18,8 +18,12 @@ public class SecKillActivityKey implements KeyPrefix {
     public int expireSeconds() {  //默认0表示永不过期
         return expireSeconds;
     }
-    
-    @Override
+
+    /**
+     * 设置过期时间
+     * @param seconds 秒数
+     * @return 设置后的过期时间
+     */
     public int expireSeconds(int seconds) {
         expireSeconds = seconds;
         return expireSeconds;

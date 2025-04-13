@@ -1,5 +1,7 @@
 package com.itheima.ds.dao.mapper;
+
 import com.itheima.ds.dao.OrderDao;
+import com.itheima.ds.model.entity.SeckillOrder;
 import org.apache.ibatis.annotations.*;
 import com.itheima.ds.model.entity.OrderInfo;
 import com.itheima.ds.model.entity.SeckillOrder;
@@ -9,7 +11,7 @@ import java.util.List;
  * 订单Mapper接口，实现OrderDao接口
  */
 @Mapper
-public interface OrderMapper implements OrderDao {
+public interface OrderMapper extends OrderDao {
 
     @Override
     @Select("SELECT * FROM seckill_order WHERE user_id = #{userId} AND goods_id = #{goodsId}")
@@ -31,9 +33,21 @@ public interface OrderMapper implements OrderDao {
 
     @Override
     @Delete("DELETE FROM seckill_order WHERE goods_id = #{goodsId} AND user_id = #{userId}")
-    void deleteSeckillOrderByGoodIdAndUserId(@Param("goodsId") long goodsId, @Param("userId") long userId);
+    void deleteSeckillOrderByGoodIdAndUserId(@Param("goodsId") Long goodsId, @Param("userId") Long userId);
 
     @Override
     @Select("SELECT * FROM seckill_order")
     List<SeckillOrder> getAllSeckillOrders();
+
+    // listOrdersByUserId
+    List<SeckillOrder> listOrdersByUserId(Long userId);
+
+    List<String> findOrdersByTime(String createTime);
+    
+    /**
+     * 查询所有秒杀订单
+     * @return 秒杀订单列表
+     */
+    @Select("SELECT * FROM order_info WHERE goods_id IN (SELECT id FROM seckill_goods)")
+    List<SeckillOrder> listAllSeckillOrders();
 }

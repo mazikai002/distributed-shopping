@@ -10,21 +10,21 @@ import java.util.Random;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 
+import com.itheima.ds.model.entity.SeckillGoods;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.itheima.ds.model.entity.SeckillOrder;
 import com.itheima.ds.model.entity.SeckillUser;
-import com.itheima.ds.mapper.SeckillGoodsMapper;
-import com.itheima.ds.mapper.SeckillUserMapper;
+import com.itheima.ds.dao.mapper.SeckillGoodsMapper;
+import com.itheima.ds.dao.mapper.SeckillUserMapper;
 import com.itheima.ds.model.entity.OrderInfo;
-import com.itheima.ds.model.entity.SeckillGoods;
-import com.itheima.ds.redisCluster.RedisService;
-import com.itheima.ds.redisCluster.SecKillActivityKey;
+import com.itheima.ds.component.cache.redis.RedisClient;
+import com.itheima.ds.component.cache.redis.SecKillActivityKey;
 import com.itheima.ds.common.utils.MD5Util;
 import com.itheima.ds.common.utils.UUIDUtil;
-import com.itheima.ds.model.vo.GoodsVo;
+import com.itheima.ds.model.vo.GoodsVO;
 
 @Service
 public class SeckillService {
@@ -36,7 +36,7 @@ public class SeckillService {
 	private OrderService orderService;
 	
 	@Autowired
-	private RedisService redisService;
+	private RedisClient redisClient;
 	
 	@Autowired
 	private SeckillUserMapper seckillUserMapper;
@@ -45,7 +45,7 @@ public class SeckillService {
 	private SeckillGoodsMapper seckillGoodsMapper;
 	 
 	@Transactional
-	public OrderInfo seckill(SeckillUser user, GoodsVo goods) {
+	public OrderInfo seckill(SeckillUser user, GoodsVO goods) {
 	   //在这里加事务的原因：
 		 //减库存而未记录购买明细，会导致商品少卖
 		 //记录购买明细而未减库存，会导致商品超卖
@@ -54,7 +54,7 @@ public class SeckillService {
 		long version = this.seckillGoodsMapper.getSeckillGoodsVersion(goods.getId());
 		
 	   //减库存  下订单  写入秒杀订单
-		boolean success = goodsService.reduceStock(goods,version);  //这里 减库存有可能失败
+		boolean success = goodsService.reduceStock(goods.getId());  //这里 减库存有可能失败
 		//减库存成功才需要下订单
 		if(success){
 		return orderService.createOrder(user,goods);
@@ -69,7 +69,7 @@ public class SeckillService {
 	
 
 	public String getSeckillResult(Long userId, long goodsId) {
-		SeckillOrder order = orderService.getSeckillOrderByUserIdAndGoodsId(userId, goodsId);
+		SeckillOrder order = orderService.getSeckillOrderByUserIdGoodsId(userId, goodsId);
 		 if(order!=null){  //秒杀成功
 			 return order.getOrderId();
 		 }else{
@@ -86,19 +86,19 @@ public class SeckillService {
 
 	
 	private void setGoodsOver(Long goodsId) {
-		redisService.set(SecKillActivityKey.isGoodsOver, ""+goodsId, true);
+		redisClient.set(SecKillActivityKey.isGoodsOver, ""+goodsId, true);
 	}
 	
 	
 	private boolean getGoodsOver(long goodsId) { 
-		return redisService.exists(SecKillActivityKey.isGoodsOver, ""+goodsId); 
+		return redisClient.exists(SecKillActivityKey.isGoodsOver, ""+goodsId);
 	}
 
 
 
 	public boolean checkPath(SeckillUser user, long goodsId, String path) {
 		if(user == null || path== null) return false;
-	   String pathBefore = redisService.get(SecKillActivityKey.getSecKillPath, ""+user.getId()+"_"+goodsId, String.class);
+	   String pathBefore = redisClient.get(SecKillActivityKey.getSecKillPath, ""+user.getId()+"_"+goodsId, String.class);
 		return path.equals(pathBefore); 
 	}
 
@@ -108,8 +108,8 @@ public class SeckillService {
 		
 		if(user == null || goodsId<=0) return null;
 		
-		String str = MD5Util.md5(UUIDUtil.uuid()+"123456");  
-	    redisService.set(SecKillActivityKey.getSecKillPath, ""+user.getId()+"_"+goodsId, str);
+		String str = MD5Util.md5(UUIDUtil.uuid()+"123456");
+		redisClient.set(SecKillActivityKey.getSecKillPath, ""+user.getId()+"_"+goodsId, str);
 	    return str;
 	}
 
@@ -144,7 +144,7 @@ public class SeckillService {
 		g.dispose();
 		//把验证码存到redis中
 		int rnd = calc(verifyCode);
-		redisService.set(SecKillActivityKey.getSecKillVerifyCode, user.getId()+","+goodsId, rnd);
+		redisClient.set(SecKillActivityKey.getSecKillVerifyCode, user.getId()+","+goodsId, rnd);
 		//输出图片	
 		return image;
 
@@ -178,11 +178,11 @@ public class SeckillService {
 		if(user == null || goodsId <=0) {
 			return false;
 		}
-		Integer codeOld = redisService.get(SecKillActivityKey.getSecKillVerifyCode, user.getId()+","+goodsId, Integer.class);
+		Integer codeOld = redisClient.get(SecKillActivityKey.getSecKillVerifyCode, user.getId()+","+goodsId, Integer.class);
 		if(codeOld == null || codeOld - verifyCode != 0 ) {
 			return false;
 		}
-		redisService.delete(SecKillActivityKey.getSecKillVerifyCode, user.getId()+","+goodsId);
+		redisClient.delete(SecKillActivityKey.getSecKillVerifyCode, user.getId()+","+goodsId);
 		return true;
 	}
 	
