@@ -1,8 +1,8 @@
 package com.itheima.ds.controller.v1;
 
 import com.itheima.ds.common.result.Result;
-import com.itheima.ds.model.vo.GoodsVO;
 import com.itheima.ds.service.GoodsService;
+import com.itheima.ds.model.vo.GoodsVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
@@ -25,7 +25,7 @@ public class GoodsController {
     @ApiOperation("更新商品库存")
     @PutMapping("/{goodsId}/stock")
     public Result<Void> updateStock(@PathVariable Long goodsId, @RequestParam Integer stock) {
-        goodsService.updateStock(goodsId, stock);
+        goodsService.updateStockWithRedis(goodsId, stock);
         return Result.success("更新库存成功", null);
     }
 } 

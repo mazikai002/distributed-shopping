@@ -1,19 +1,19 @@
 package com.itheima.ds.controller.v1;
 
+import com.itheima.ds.common.result.CodeMsg;
+import com.itheima.ds.common.result.Result;
+import com.itheima.ds.component.cache.redis.RedisClient;
+import com.itheima.ds.model.entity.User;
+import com.itheima.ds.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import com.itheima.ds.model.entity.User;
-import com.itheima.ds.component.cache.redis.RedisClient;
-import com.itheima.ds.common.result.CodeMsg;
-import com.itheima.ds.common.result.Result;
-import com.itheima.ds.service.UserService;
- 
+
 
 @Controller
-@RequestMapping("/demo")
+@RequestMapping("/demo/v1")
 public class DemoController {
 	 
 	@Autowired

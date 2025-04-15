@@ -5,20 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/MQController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/MQController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/SeckillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/SeckillController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/GoodsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/MQController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/OrderController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/SeckillController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v2/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/DemoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/GoodsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/GoodsController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/LoginController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/MQController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/MQController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/OrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/OrderController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/SeckillController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/SeckillController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/TestController.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +69,12 @@
     "Docker.deploy: Compose Deployment.executor": "Run",
     "Maven.distributed-shopping [clean].executor": "Run",
     "Maven.distributed-shopping [package].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelOrder2": "2",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RequestMappingsPanelWidth2": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.Application (1).executor": "Run",
     "Spring Boot.Application (2).executor": "Run",
@@ -154,7 +162,7 @@
       <workItem from="1744554218202" duration="629000" />
       <workItem from="1744554852610" duration="14000" />
       <workItem from="1744554873057" duration="91000" />
-      <workItem from="1744554970208" duration="6173000" />
+      <workItem from="1744554970208" duration="6196000" />
     </task>
     <servers />
   </component>
