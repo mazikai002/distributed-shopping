@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/DemoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/DemoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/GoodsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/GoodsController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/GoodsController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/LoginController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/MQController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/MQController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/OrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/OrderController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/SeckillController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/SeckillController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/TestController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v2/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,35 +49,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Docker.deploy: Compose Deployment.executor": "Run",
-    "Maven.distributed-shopping [clean].executor": "Run",
-    "Maven.distributed-shopping [package].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelOrder2": "2",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RequestMappingsPanelWidth2": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.Application (1).executor": "Run",
-    "Spring Boot.Application (2).executor": "Run",
-    "Spring Boot.Application.executor": "Run",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.3282353",
-    "settings.editor.selected.configurable": "MavenSettings",
-    "ts.external.directory.path": "/Users/mzk/Applications/JetBrains/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Docker.deploy: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.distributed-shopping [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.distributed-shopping [package].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth2&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Application (1).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application (2).executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.Application.executor&quot;: &quot;Run&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.3282353&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/mzk/Applications/JetBrains/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.itheima.ds.controller.v2" />
@@ -163,6 +148,8 @@
       <workItem from="1744554852610" duration="14000" />
       <workItem from="1744554873057" duration="91000" />
       <workItem from="1744554970208" duration="6196000" />
+      <workItem from="1744724573690" duration="30000" />
+      <workItem from="1744724622193" duration="2030000" />
     </task>
     <servers />
   </component>

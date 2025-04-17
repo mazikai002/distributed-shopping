@@ -13,11 +13,11 @@
 
 ## 技术栈
 
-- **后端**：Spring Boot, Spring MVC, MyBatis Plus
+- **后端**：Spring Boot, Spring MVC, MyBatis
 - **数据库**：MySQL
 - **缓存**：Redis
-- **消息队列**：RocketMQ
 - **搜索引擎**：ElasticSearch
+- - **消息队列**：RocketMQ
 - **对象存储**：MinIO
 - **工具库**：JWT, Lombok, Swagger
 
