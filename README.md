@@ -121,3 +121,34 @@ http://localhost:9001
 - **秒杀模块**：高性能的秒杀功能
 - **搜索模块**：基于ES的商品搜索功能
 - **文件存储模块**：基于MinIO的图片存储功能
+
+
+## 基本秒杀思路
+
+```mermaid
+graph TD
+    A[Spring 后端] --> B[Redis]
+    B --> C{库存充足?}
+    C -->|是| D[消息发送<br/>用户,商品id]
+    C -->|否| E[库存不足,秒杀失败]
+    D --> F[RocketMQ]
+    F --> G[生成订单写入存储]
+    G --> H((订单))
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#f96,stroke:#333,stroke-width:2px
+    style F fill:#ff9,stroke:#333,stroke-width:2px
+    style H fill:#9cf,stroke:#333,stroke-width:2px
+
+    %% 添加说明注释
+    classDef note fill:#fff,stroke:#333,stroke-width:1px;
+    N1[将商品信息<br/>高速id>存储于Redis中<br/>目的在于减少对Redis缓存的访问]:::note
+    N2[在Redis缓存中进行预减库存操作<br/>目的在于减少对DB的访问]:::note
+    N3[消息写入队列]:::note
+    N4[消息写入持久化,生成订单]:::note
+    
+    B -.-> N1
+    D -.-> N2
+    F -.-> N3
+    H -.-> N4
+```
