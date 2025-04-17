@@ -1,22 +1,22 @@
 # 分布式秒杀商城系统
 
-基于Spring Boot + Redis + RocketMQ + ElasticSearch + MinIO构建的高性能分布式秒杀商城系统。
+基于 Spring Boot + MySQL + Redis + RocketMQ + Elasticsearch + MinIO 构建的分布式秒杀商城系统(前台项目)。
 
 ## 功能特点
 
 - 基于Redis的秒杀功能，解决高并发下的库存超卖问题
 - MinIO对象存储，支持高性能的图片存储和访问
 - RocketMQ消息队列，实现系统间解耦和异步处理
-- ElasticSearch全文检索，提供强大的商品搜索功能
+- Elasticsearch全文检索，提供强大的商品搜索功能
 - 分布式Session管理，支持横向扩展
 - 全局异常处理，规范化错误信息
 
-## 技术栈
+## 主要技术
 
 - **后端**：Spring Boot, Spring MVC, MyBatis
 - **数据库**：MySQL
 - **缓存**：Redis
-- **搜索引擎**：ElasticSearch
+- **搜索引擎**：Elasticsearch
 - **消息队列**：RocketMQ
 - **对象存储**：MinIO
 - **工具库**：JWT, Lombok, Swagger
@@ -26,14 +26,14 @@
 ### 环境要求
 
 - Docker & Docker Compose
-- JDK 11+
-- Maven 3.6+
+- JDK 8
+- Maven 3.6.3
 
 ### 启动服务
 
 1. 克隆代码仓库
 ```bash
-git clone https://github.com/yourusername/distributed-shopping.git
+git clone https://github.com/mazikai002/distributed-shopping.git
 cd distributed-shopping
 ```
 
@@ -123,7 +123,7 @@ http://localhost:9001
 - **文件存储模块**：基于MinIO的图片存储功能
 
 
-## 基本秒杀思路
+## 秒杀思路
 
 ```mermaid
 graph TD
