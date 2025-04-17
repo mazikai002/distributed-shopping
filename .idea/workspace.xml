@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="" />
+    <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/SeckillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/SeckillController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,9 +71,9 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.3282353",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.16894531",
+    "project.structure.side.proportion": "0.47411764",
     "settings.editor.selected.configurable": "MavenSettings",
     "ts.external.directory.path": "/Users/mzk/Applications/JetBrains/IntelliJ IDEA Ultimate.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
@@ -148,7 +151,7 @@
       <workItem from="1744554970208" duration="6196000" />
       <workItem from="1744724573690" duration="30000" />
       <workItem from="1744724622193" duration="2030000" />
-      <workItem from="1744904065154" duration="666000" />
+      <workItem from="1744904065154" duration="1029000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,6 @@
 package com.itheima.ds.controller.v1;
 
-import com.itheima.ds.common.ResponseBean;
+import com.itheima.ds.common.result.Result;
 import com.itheima.ds.service.ISeckillService;
 import com.itheima.ds.service.GoodsService;
 import com.itheima.ds.model.vo.GoodsVO;
@@ -90,7 +90,7 @@ public class SeckillController {
      */
     @ApiOperation(value = "健康检查", notes = "测试接口是否正常响应")
     @GetMapping("/health")
-    public ResponseBean<String> health() {
-        return ResponseBean.success("V2秒杀服务正常");
+    public Result<String> health() {
+        return Result.success("V2秒杀服务正常");
     }
 } 
