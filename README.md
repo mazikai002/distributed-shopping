@@ -17,7 +17,7 @@
 - **数据库**：MySQL
 - **缓存**：Redis
 - **搜索引擎**：ElasticSearch
-- - **消息队列**：RocketMQ
+- **消息队列**：RocketMQ
 - **对象存储**：MinIO
 - **工具库**：JWT, Lombok, Swagger
 
