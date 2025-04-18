@@ -2,6 +2,11 @@
 <project version="4">
   <component name="RemoteRepositoriesConfiguration">
     <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central Repository" />
+      <option name="url" value="https://maven.aliyun.com/repository/central" />
+    </remote-repository>
+    <remote-repository>
       <option name="id" value="Lianjia-Infrastructure-Releases" />
       <option name="name" value="Lianjia-Infrastructure-Releases" />
       <option name="url" value="http://maven.lianjia.com/content/repositories/Lianjia-Infrastructure-Releases/" />

@@ -96,15 +96,24 @@ rabbitMQPassword: admin
 
 # RocketMQ配置
 rocketmq:
-  name-server: 127.0.0.1:9876
+  name-server: localhost:9876
   producer:
     group: seckill_producer
     send-message-timeout: 3000
+    retry-times-when-send-failed: 3
+    retry-times-when-send-async-failed: 3
+    retry-next-server: true
+    compress-message-body-threshold: 4096
+    max-message-size: 4194304
   topic:
     seckill: seckill_topic
     order: order_topic
   consumer:
     group: seckill_consumer
+    pull-timeout: 3000
+    consume-thread-min: 20
+    consume-thread-max: 64
+    consume-message-batch-max-size: 1
     
 # MinIO配置
 minio:

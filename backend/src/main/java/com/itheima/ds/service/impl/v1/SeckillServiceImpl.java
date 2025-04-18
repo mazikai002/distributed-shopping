@@ -21,7 +21,7 @@ public class SeckillServiceImpl implements ISeckillService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Long doSeckill(Long goodsId) {
+    public Long doSeckill(Long voucherId) {
         // 获取当前用户，这里假设从上下文获取，实际项目中可能需要从请求中获取
         SeckillUser user = getCurrentUser();
         if (user == null) {
@@ -29,14 +29,14 @@ public class SeckillServiceImpl implements ISeckillService {
         }
 
         // 判断库存
-        GoodsVO goods = goodsService.getGoodsVoByGoodsId(goodsId);
+        GoodsVO goods = goodsService.getGoodsVoByGoodsId(voucherId);
         int stock = goods.getStockCount();
         if (stock <= 0) {
             throw new RuntimeException("秒杀已结束");
         }
 
         // 判断是否已经秒杀到了
-        SeckillOrder order = orderService.getSeckillOrderByUserIdGoodsId(user.getId(), goodsId);
+        SeckillOrder order = orderService.getSeckillOrderByUserIdGoodsId(user.getId(), voucherId);
         if (order != null) {
             throw new RuntimeException("重复秒杀");
         }

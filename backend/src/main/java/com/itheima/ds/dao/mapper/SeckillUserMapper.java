@@ -1,6 +1,7 @@
 package com.itheima.ds.dao.mapper;
 
 import java.util.List;
+import java.util.Date;
 
 import org.apache.ibatis.annotations.*;
 import org.apache.ibatis.annotations.Param;
@@ -20,7 +21,17 @@ public interface SeckillUserMapper extends SeckillUserDao {
     SeckillUser getUserById(@Param("id") long id);
 
     @Override
-    @Update("UPDATE seckill_user SET password = #{password}, salt = #{salt}, register_date = #{registerDate}, last_login_date = #{lastLoginDate} WHERE id = #{id}")
+    @Update("UPDATE seckill_user SET " +
+            "password = #{password}, " +
+            "nickname = #{nickname}, " +
+            "salt = #{salt}, " +
+            "mobile = #{mobile}, " +
+            "email = #{email}, " +
+            "head = #{head}, " +
+            "register_date = #{registerDate}, " +
+            "last_login_date = #{lastLoginDate}, " +
+            "login_count = #{loginCount} " +
+            "WHERE id = #{id}")
     void update(SeckillUser user);
 
     @Override
@@ -46,5 +57,31 @@ public interface SeckillUserMapper extends SeckillUserDao {
     public SeckillGoods getSeckillGoodsByGoodsId(@Param("goodsId")long goodsId);
 
     @Select("SELECT g.*, sg.stock_count, sg.start_date, sg.end_date, sg.seckill_price, sg.version FROM seckill_goods sg LEFT JOIN goods g ON sg.goods_id = g.id")
-    public List<SeckillGoods> getSeckillGoodsVoList();        
+    public List<SeckillGoods> getSeckillGoodsVoList();
+
+    /**
+     * 通过ID查询用户
+     */
+    @Select("SELECT * FROM seckill_user WHERE id = #{id}")
+    SeckillUser getById(@Param("id") Long id);
+    
+    /**
+     * 通过用户名查询用户
+     */
+    @Select("SELECT * FROM seckill_user WHERE username = #{username}")
+    SeckillUser getByUsername(@Param("username") String username);
+    
+    /**
+     * 通过手机号查询用户
+     */
+    @Select("SELECT * FROM seckill_user WHERE mobile = #{mobile}")
+    SeckillUser getByMobile(@Param("mobile") String mobile);
+    
+    /**
+     * 插入用户
+     */
+    @Insert("INSERT INTO seckill_user(username, password, nickname, salt, mobile, email, head, register_date, last_login_date, login_count) " +
+            "VALUES(#{username}, #{password}, #{nickname}, #{salt}, #{mobile}, #{email}, #{head}, #{registerDate}, #{lastLoginDate}, #{loginCount})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    int insert(SeckillUser user);
 } 

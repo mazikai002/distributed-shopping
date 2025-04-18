@@ -6,7 +6,6 @@ import com.itheima.ds.service.GoodsService;
 import com.itheima.ds.model.vo.GoodsVO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.ResponseEntity;
@@ -15,20 +14,22 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * V2 版本的秒杀控制器
- * 使用Redis进行库存扣减以提高性能
+ * V1 版本的秒杀控制器
+ * 使用数据库进行库存扣减
  */
 @Slf4j
-@RestController
+@RestController("seckillControllerV1")
 @RequestMapping("/api/v1/seckill")
-@RequiredArgsConstructor
 @Api(tags = "秒杀接口-V1")
 public class SeckillController {
 
-    @Qualifier("v2SeckillService")
     private final ISeckillService seckillService;
-    
     private final GoodsService goodsService;
+
+    public SeckillController(@Qualifier("v1SeckillService") ISeckillService seckillService, GoodsService goodsService) {
+        this.seckillService = seckillService;
+        this.goodsService = goodsService;
+    }
 
     /**
      * 获取秒杀商品列表
@@ -48,34 +49,34 @@ public class SeckillController {
 
     /**
      * 执行秒杀操作
-     * @param goodsId 商品ID
+     * @param voucherId 商品ID
      * @return 订单ID
      */
-    @PostMapping("/{goodsId}")
-    public ResponseEntity<Long> doSeckill(@PathVariable("goodsId") Long goodsId) {
-        log.info("v2秒杀请求, 商品ID: {}", goodsId);
+    @PostMapping("/{voucherId}")
+    public ResponseEntity<Long> doSeckill(@PathVariable("voucherId") Long voucherId) {
+        log.info("v1秒杀请求, 商品ID: {}", voucherId);
         
         try {
             // 调用秒杀服务
-            Long orderId = seckillService.seckill(goodsId);
+            Long orderId = seckillService.doSeckill(voucherId);
             return ResponseEntity.ok(orderId);
         } catch (Exception e) {
-            log.error("v2秒杀失败", e);
+            log.error("v1秒杀失败", e);
             return ResponseEntity.badRequest().body(null);
         }
     }
 
     /**
      * 预加载商品库存到Redis
-     * @param goodsId 商品ID
+     * @param voucherId 商品ID
      * @return 预加载结果
      */
-    @PostMapping("/preload/{goodsId}")
-    public ResponseEntity<String> preloadStock(@PathVariable("goodsId") Long goodsId) {
-        log.info("预加载商品库存到Redis, 商品ID: {}", goodsId);
+    @PostMapping("/preload/{voucherId}")
+    public ResponseEntity<String> preloadStock(@PathVariable("voucherId") Long voucherId) {
+        log.info("预加载商品库存到Redis, 商品ID: {}", voucherId);
         
         try {
-            seckillService.preloadStock(goodsId);
+            seckillService.preloadStock(voucherId);
             return ResponseEntity.ok("商品库存预加载成功");
         } catch (Exception e) {
             log.error("商品库存预加载失败", e);

@@ -1,4 +1,4 @@
-package com.itheima.ds.controller.v1;
+package com.itheima.ds.controller.v2;
 
 import com.itheima.ds.common.result.Result;
 import com.itheima.ds.service.ISeckillService;
@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 /**
- * V1 版本的秒杀控制器
- * 使用数据库进行库存扣减
+ * V2 版本的秒杀控制器
+ * 使用Redis进行库存扣减以提高性能
  */
 @Slf4j
-@RestController("seckillControllerV1")
-@RequestMapping("/api/v1/seckill")
-@Api(tags = "秒杀接口-V1")
+@RestController("seckillControllerV2")
+@RequestMapping("/api/v2/seckill")
+@Api(tags = "秒杀接口-V2")
 public class SeckillController {
 
     private final ISeckillService seckillService;
     private final GoodsService goodsService;
 
-    public SeckillController(@Qualifier("v1SeckillService") ISeckillService seckillService, GoodsService goodsService) {
+    public SeckillController(@Qualifier("v2SeckillService") ISeckillService seckillService, GoodsService goodsService) {
         this.seckillService = seckillService;
         this.goodsService = goodsService;
     }
@@ -54,14 +54,14 @@ public class SeckillController {
      */
     @PostMapping("/{voucherId}")
     public ResponseEntity<Long> doSeckill(@PathVariable("voucherId") Long voucherId) {
-        log.info("v1秒杀请求, 商品ID: {}", voucherId);
+        log.info("v2秒杀请求, 商品ID: {}", voucherId);
         
         try {
             // 调用秒杀服务
             Long orderId = seckillService.doSeckill(voucherId);
             return ResponseEntity.ok(orderId);
         } catch (Exception e) {
-            log.error("v1秒杀失败", e);
+            log.error("v2秒杀失败", e);
             return ResponseEntity.badRequest().body(null);
         }
     }
@@ -92,6 +92,6 @@ public class SeckillController {
     @ApiOperation(value = "健康检查", notes = "测试接口是否正常响应")
     @GetMapping("/health")
     public Result<String> health() {
-        return Result.success("V1秒杀服务正常");
+        return Result.success("V2秒杀服务正常");
     }
 } 

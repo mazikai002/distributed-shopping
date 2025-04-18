@@ -1,6 +1,5 @@
 package com.itheima.ds.model.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
@@ -13,7 +12,6 @@ import java.util.Date;
  * 秒杀用户实体类
  */
 @Data
-@TableName("seckill_user")
 public class SeckillUser implements Serializable {
     
     private static final long serialVersionUID = 1L;

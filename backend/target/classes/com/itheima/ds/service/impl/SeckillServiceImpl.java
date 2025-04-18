@@ -39,10 +39,8 @@ public class SeckillServiceImpl implements ISeckillService {
             throw new RuntimeException("库存不足！");
         }
         // 5. 扣减库存
-        boolean success = seckillVoucherService.update()
-                .setSql("stock = stock - 1")
-                .eq("voucher_id", voucherId)
-                .update();
+        voucher.setStock(voucher.getStock() - 1);
+        boolean success = seckillVoucherService.update(voucher);
         if (!success) {
             throw new RuntimeException("库存不足！");
         }

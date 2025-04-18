@@ -1,6 +1,5 @@
 package com.itheima.ds.model.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
@@ -12,7 +11,6 @@ import java.time.LocalDateTime;
  * 秒杀优惠券实体类
  */
 @Data
-@TableName("seckill_voucher")
 public class SeckillVoucher implements Serializable {
     
     private static final long serialVersionUID = 1L;

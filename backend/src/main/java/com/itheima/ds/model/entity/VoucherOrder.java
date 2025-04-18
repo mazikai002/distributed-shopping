@@ -1,6 +1,5 @@
 package com.itheima.ds.model.entity;
 
-import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
 import javax.validation.constraints.NotNull;
@@ -11,7 +10,6 @@ import java.time.LocalDateTime;
  * 优惠券订单实体类
  */
 @Data
-@TableName("voucher_order")
 public class VoucherOrder implements Serializable {
     
     private static final long serialVersionUID = 1L;

@@ -63,22 +63,22 @@ public class SeckillServiceImpl implements ISeckillService {
      * 执行秒杀操作 - 接口方法，匹配ISeckillService接口
      */
     @Override
-    public Long doSeckill(Long goodsId) {
-        return this.processSecKill(goodsId);
+    public Long doSeckill(Long voucherId) {
+        return this.processSecKill(voucherId);
     }
     
     /**
      * 执行秒杀操作 - 提供给Controller调用的方法
      */
-    public Long seckill(Long goodsId) {
-        return this.processSecKill(goodsId);
+    public Long seckill(Long voucherId) {
+        return this.processSecKill(voucherId);
     }
     
     /**
      * 秒杀处理的实际逻辑
      */
     @Transactional(rollbackFor = Exception.class)
-    private Long processSecKill(Long goodsId) {
+    private Long processSecKill(Long voucherId) {
         // 获取当前用户，这里假设从上下文获取，实际项目中可能需要从请求中获取
         SeckillUser user = getCurrentUser();
         if (user == null) {
@@ -86,14 +86,14 @@ public class SeckillServiceImpl implements ISeckillService {
         }
         
         // 1. 判断当前用户是否已经秒杀过该商品（从Redis中查询）
-        String orderKey = SECKILL_ORDER_KEY + user.getId() + ":" + goodsId;
+        String orderKey = SECKILL_ORDER_KEY + user.getId() + ":" + voucherId;
         boolean hasOrder = redisClient.exists(orderKey);
         if (hasOrder) {
             throw new GlobalException("重复秒杀");
         }
         
         // 2. 使用Redis Lua脚本进行原子性库存检查和扣减
-        String stockKey = STOCK_KEY + goodsId;
+        String stockKey = STOCK_KEY + voucherId;
         
         DefaultRedisScript<Long> redisScript = new DefaultRedisScript<>();
         redisScript.setScriptText(STOCK_SCRIPT);
@@ -102,7 +102,7 @@ public class SeckillServiceImpl implements ISeckillService {
         Long result = redisTemplate.execute(redisScript, Arrays.asList(stockKey));
         
         if (result == null || result < 0) {
-            log.error("Redis库存扣减失败, goodsId: {}, result: {}", goodsId, result);
+            log.error("Redis库存扣减失败, voucherId: {}, result: {}", voucherId, result);
             if (result == -1) {
                 throw new RuntimeException("商品库存不足");
             } else {
@@ -110,17 +110,17 @@ public class SeckillServiceImpl implements ISeckillService {
             }
         }
         
-        log.info("Redis库存扣减成功, goodsId: {}, 剩余库存: {}", goodsId, result);
+        log.info("Redis库存扣减成功, voucherId: {}, 剩余库存: {}", voucherId, result);
         
         // 3. 获取商品信息
-        GoodsVO goods = goodsService.getGoodsVoByGoodsId(goodsId);
+        GoodsVO goods = goodsService.getGoodsVoByGoodsId(voucherId);
         
         // 4. 创建订单（异步方式）
         SeckillOrder order = new SeckillOrder();
         long orderId = redisIdWorker.nextId("order");
         order.setId(orderId);
         order.setUserId(user.getId());
-        order.setGoodsId(goodsId);
+        order.setGoodsId(voucherId);
         order.setGoodsName(goods.getGoodsName());
         order.setGoodsPrice(goods.getSeckillPrice() != null ? goods.getSeckillPrice().doubleValue() : null);
         order.setCreateTime(LocalDateTime.now());
@@ -133,7 +133,7 @@ public class SeckillServiceImpl implements ISeckillService {
         Long orderIdFromRedis = orderService.createOrderWithRedis(order);
         
         // 7. 异步更新数据库库存（实际项目中应该通过消息队列异步处理）
-        asyncUpdateStock(goodsId, goods.getStockCount() - 1);
+        asyncUpdateStock(voucherId, goods.getStockCount() - 1);
         
         return orderIdFromRedis;
     }
@@ -142,12 +142,12 @@ public class SeckillServiceImpl implements ISeckillService {
      * 异步更新库存到数据库
      * 在实际系统中，这应该是一个通过消息队列触发的异步操作
      */
-    private void asyncUpdateStock(Long goodsId, Integer newStock) {
+    private void asyncUpdateStock(Long voucherId, Integer newStock) {
         try {
             // 这里简化实现，实际项目中应通过消息队列异步更新
-            goodsService.updateStock(goodsId, newStock);
+            goodsService.updateStock(voucherId, newStock);
         } catch (Exception e) {
-            log.error("异步更新库存失败：goodsId={}, newStock={}", goodsId, newStock, e);
+            log.error("异步更新库存失败：voucherId={}, newStock={}", voucherId, newStock, e);
             // 实际系统应有更完善的异常处理和重试机制
         }
     }
@@ -155,19 +155,19 @@ public class SeckillServiceImpl implements ISeckillService {
     /**
      * 预加载库存到Redis - 提供给Controller调用的方法
      */
-    public void preloadStock(Long goodsId) {
-        this.preloadStockToRedis(goodsId);
+    public void preloadStock(Long voucherId) {
+        this.preloadStockToRedis(voucherId);
     }
     
     /**
      * 系统初始化时预热库存缓存
      * 将商品库存加载到Redis中
      */
-    public void preloadStockToRedis(Long goodsId) {
-        GoodsVO goods = goodsService.getGoodsVoByGoodsId(goodsId);
+    public void preloadStockToRedis(Long voucherId) {
+        GoodsVO goods = goodsService.getGoodsVoByGoodsId(voucherId);
         if (goods != null && goods.getStockCount() > 0) {
             // 将库存设置到Redis
-            String stockKey = STOCK_KEY + goodsId;
+            String stockKey = STOCK_KEY + voucherId;
             redisTemplate.opsForValue().set(stockKey, goods.getStockCount());
         }
     }

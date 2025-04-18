@@ -5,7 +5,128 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff6df5d6-9adb-4581-be48-1bf6d8d79498" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/RocketMQConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/config/RocketMQConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/SeckillController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/controller/v1/SeckillController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/SeckillUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/dao/mapper/SeckillUserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillVoucher.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/SeckillVoucher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/VoucherOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/model/entity/VoucherOrder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/ISeckillVoucherService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/ISeckillVoucherService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/IVoucherOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/IVoucherOrderService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/MQServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/MQServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/SeckillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v1/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v1/SeckillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v2/SeckillServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/itheima/ds/service/impl/v2/SeckillServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/Application.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/constant/CommonConstant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/constant/RedisConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/constant/SystemConstants$Business.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/constant/SystemConstants$Login.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/constant/SystemConstants$Redis.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/constant/SystemConstants$SecKill.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/constant/SystemConstants.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/enums/OrderStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/exception/GlobalException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/exception/GlobalExceptionHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/result/CodeMsg.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/result/Result.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/DBUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/JwtTokenUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/MD5Util.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/ReadUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/RedisIdWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/SnowFlakeIdWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/TimeUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/UUIDUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/UserHolder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/UserUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/common/utils/ValidatorUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/cache/redis/JedisClusterConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/cache/redis/KeyPrefix.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/cache/redis/RedisClient.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/cache/redis/RedisTemplate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/cache/redis/SecKillActivityKey.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/limiter/counter/CountRateLimiting.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/limiter/ratelimiter/AccessLimitService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/mq/ConsumerDirectDemo$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/mq/ConsumerDirectDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/mq/ProducerDirectDemo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/mq/rocketmq/consumer/RocketMQConsumer$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/mq/rocketmq/consumer/RocketMQConsumer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/mq/rocketmq/message/BaseMessage.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/component/mq/rocketmq/producer/RocketMQProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/MinioConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/RedisConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/RocketMQConfig$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/RocketMQConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/SecKillConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/SeckillOrderConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/ServiceConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/UserArgumentResolver.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/ValidationConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/config/WebConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/DemoController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/FileController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/GoodsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/LoginController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/MQController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/OrderController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/SeckillController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/controller/v1/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/GoodsDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/OrderDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/SeckillGoodsDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/SeckillUserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/UserDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/GoodsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/OrderMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/SeckillGoodsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/SeckillUserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/dao/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/dto/SeckillDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/dto/UserDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/Goods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/OrderInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillGoods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillUser.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/SeckillVoucher.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/entity/VoucherOrder.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/GoodsDetailVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/GoodsVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/LoginVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/OrderDetailVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/model/vo/SeckillOrderVO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/FileStorageService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/GoodsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/ISeckillService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/ISeckillVoucherService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/IVoucherOrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/LoginService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/MQService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/OrderService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/SeckillService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/SeckillUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/GoodsServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/LoginServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/MQServiceImpl$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/MQServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/MinioFileStorageServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/OrderServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/SeckillServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/v1/SeckillServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/service/impl/v2/SeckillServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/validator/IsMobile.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/target/classes/com/itheima/ds/validator/IsMobileValidator.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +175,7 @@
     &quot;Docker.deploy: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;Maven.distributed-shopping [clean].executor&quot;: &quot;Run&quot;,
     &quot;Maven.distributed-shopping [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.ds [clean].executor&quot;: &quot;Run&quot;,
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelOrder2&quot;: &quot;2&quot;,
@@ -152,6 +274,8 @@
       <workItem from="1744724622193" duration="2030000" />
       <workItem from="1744904065154" duration="1950000" />
       <workItem from="1744991394690" duration="668000" />
+      <workItem from="1744992066214" duration="627000" />
+      <workItem from="1744992696216" duration="2851000" />
     </task>
     <servers />
   </component>
