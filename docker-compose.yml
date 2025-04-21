@@ -29,6 +29,7 @@ services:
 
   rocketmq-namesrv:
     image: apache/rocketmq:4.9.4
+    platform: linux/amd64
     container_name: seckill-rocketmq-namesrv
     ports:
       - "9876:9876"
@@ -40,6 +41,7 @@ services:
 
   rocketmq-broker:
     image: apache/rocketmq:4.9.4
+    platform: linux/amd64
     container_name: seckill-rocketmq-broker
     ports:
       - "10909:10909"
@@ -56,49 +58,37 @@ services:
 
   # Elasticsearch服务
   elasticsearch:
-    image: elasticsearch:7.17.7
+    image: shouldnotappearcalm/elasticsearch-ik-pinyin:7.11.1
+    platform: linux/amd64
     container_name: seckill-elasticsearch
+    user: root
     ports:
       - "9200:9200"
       - "9300:9300"
     environment:
       - discovery.type=single-node
-      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - xpack.security.enabled=false
+      - bootstrap.memory_lock=true
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
     volumes:
       - es_data:/usr/share/elasticsearch/data
     networks:
       - seckill-network
     restart: always
 
-  # Elasticsearch IK分词器插件安装
-  es-ik-installer:
-    image: curlimages/curl:7.86.0
-    container_name: seckill-es-ik-installer
-    depends_on:
-      - elasticsearch
-    command: >
-      sh -c '
-      sleep 30 &&
-      curl -X POST "elasticsearch:9200/_shutdown" ||: &&
-      curl -o /tmp/elasticsearch-analysis-ik-7.17.7.zip https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v7.17.7/elasticsearch-analysis-ik-7.17.7.zip &&
-      mkdir -p /usr/share/elasticsearch/plugins/ik &&
-      unzip /tmp/elasticsearch-analysis-ik-7.17.7.zip -d /usr/share/elasticsearch/plugins/ik/ &&
-      chmod -R 755 /usr/share/elasticsearch/plugins/ik
-      '
-    volumes:
-      - es_plugins:/usr/share/elasticsearch/plugins
-    networks:
-      - seckill-network
-
   # Kibana服务 (Elasticsearch的可视化工具)
   kibana:
-    image: kibana:7.17.7
+    image: kibana:7.11.1
     container_name: seckill-kibana
-    ports:
-      - "5601:5601"
     environment:
       - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - i18n.locale=zh-CN
+    ports:
+      - "5601:5601"
     depends_on:
       - elasticsearch
     networks:
