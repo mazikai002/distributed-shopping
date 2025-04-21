@@ -1,69 +1,58 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
-import { login as loginApi, register as registerApi, getUserInfo } from '@/api/user'
+import { login, getUserInfo, logout } from '@/api/user'
+import router from '@/router'
 
 export const useUserStore = defineStore('user', () => {
-  const user = ref(null)
-  const token = ref(localStorage.getItem('token'))
+  const token = ref(localStorage.getItem('token') || '')
+  const userInfo = ref({})
 
-  const setUser = (userData) => {
-    user.value = userData
-  }
-
-  const setToken = (tokenValue) => {
-    token.value = tokenValue
-    localStorage.setItem('token', tokenValue)
-  }
-
-  const clearUser = () => {
-    user.value = null
-    token.value = null
-    localStorage.removeItem('token')
-  }
-
-  const login = async (credentials) => {
+  // 登录
+  async function loginAction(loginForm) {
     try {
-      const response = await loginApi(credentials)
-      const { data } = response
-      setToken(data.token)
-      setUser(data.user)
-      return data
+      const res = await login(loginForm)
+      if (res.code === 200) {
+        token.value = res.data.token
+        localStorage.setItem('token', res.data.token)
+        await router.push('/')
+      }
+      return res
     } catch (error) {
-      throw new Error(error.message || '登录失败')
+      return Promise.reject(error)
     }
   }
 
-  const register = async (userData) => {
+  // 获取用户信息
+  async function getUserInfoAction() {
     try {
-      const response = await registerApi(userData)
-      return response.data
+      const res = await getUserInfo()
+      if (res.code === 200) {
+        userInfo.value = res.data
+      }
+      return res
     } catch (error) {
-      throw new Error(error.message || '注册失败')
+      return Promise.reject(error)
     }
   }
 
-  const logout = () => {
-    clearUser()
-  }
-
-  const checkAuth = async () => {
-    if (!token.value) return false
+  // 登出
+  async function logoutAction() {
     try {
-      const response = await getUserInfo()
-      setUser(response.data)
-      return true
+      await logout()
+      token.value = ''
+      userInfo.value = {}
+      localStorage.removeItem('token')
+      router.push('/login')
     } catch (error) {
-      clearUser()
-      return false
+      return Promise.reject(error)
     }
   }
 
   return {
-    user,
     token,
-    login,
-    register,
-    logout,
-    checkAuth
+    userInfo,
+    loginAction,
+    getUserInfoAction,
+    logoutAction
   }
 }) 
