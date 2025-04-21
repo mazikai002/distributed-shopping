@@ -1,7 +1,8 @@
 {
-  "name": "jd-mall-frontend",
+  "name": "distributed-shopping-frontend",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,8 +11,9 @@
   "dependencies": {
     "vue": "^3.3.4",
     "vue-router": "^4.2.4",
-    "element-plus": "^2.3.9",
-    "@element-plus/icons-vue": "^2.1.0",
+    "pinia": "^2.1.6",
+    "ant-design-vue": "^4.0.0",
+    "@ant-design/icons-vue": "^7.0.0",
     "axios": "^1.4.0"
   },
   "devDependencies": {
