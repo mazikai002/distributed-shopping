@@ -26,10 +26,53 @@ a {
   cursor: pointer;
 }
 
-.ant-layout-header {
+/* Header styling */
+.header {
+  display: flex;
+  align-items: center;
+  height: 64px;
   line-height: 64px;
-  background: #001529;
   padding: 0 50px;
+}
+
+/* Logo styling */
+.logo {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  margin-right: 24px;
+}
+
+.logo img {
+  display: block;
+  transition: all 0.3s;
+}
+
+.logo:hover img {
+  transform: scale(1.1);
+}
+
+/* Menu styling */
+.ant-menu-horizontal {
+  border-bottom: none;
+  line-height: 64px;
+}
+
+.ant-menu-item {
+  display: flex;
+  align-items: center;
+}
+
+/* Adjust for RTL layouts */
+[dir='rtl'] .logo {
+  float: right;
+  margin-right: 0;
+  margin-left: 24px;
+}
+
+.ant-layout-header {
+  padding: 0;
+  background: #001529;
 }
 
 .ant-layout-footer {

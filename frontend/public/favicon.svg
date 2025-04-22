@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- 渐变定义 -->
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1E3A8A" />
+      <stop offset="50%" style="stop-color:#3B82F6" />
+      <stop offset="100%" style="stop-color:#0EA5E9" />
+    </linearGradient>
+    <linearGradient id="secondGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F59E0B" />
+      <stop offset="100%" style="stop-color:#EF4444" />
+    </linearGradient>
+  </defs>
+  
+  <!-- 简化的购物袋形状 -->
+  <path d="M18,18 L32,12 L46,18 L50,52 L14,52 Z" fill="url(#mainGradient)" />
+  
+  <!-- 购物袋手提部分 -->
+  <path d="M32,12 Q29,10 26,12 M32,12 Q35,10 38,12" stroke="url(#mainGradient)" stroke-width="1.5" fill="none" stroke-linecap="round" />
+  
+  <!-- M形状折痕 - 简化版 -->
+  <path d="M32,12 L32,36 M22,20 L32,36 L42,20" stroke="#FFFFFF" stroke-width="1.5" fill="none" stroke-opacity="0.5" stroke-linecap="round" />
+  
+  <!-- 简化的标签 -->
+  <rect x="27" y="22" width="10" height="6" rx="1" fill="url(#secondGradient)" />
+  
+  <!-- 简化的分布式表现 -->
+  <path d="M22,42 L42,42" stroke="white" stroke-width="1" stroke-dasharray="1,1" />
+</svg> 
