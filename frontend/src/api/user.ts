@@ -5,12 +5,21 @@ export interface LoginParams {
   password: string;
 }
 
-export interface LoginResult {
+export interface RegisterParams {
+  username: string;
+  password: string;
+  email: string;
+  phone: string;
+}
+
+export interface ApiResponse<T> {
   code: number;
   message: string;
-  data: {
-    token: string;
-  };
+  data: T;
+}
+
+export interface TokenData {
+  token: string;
 }
 
 export interface UserInfo {
@@ -21,17 +30,17 @@ export interface UserInfo {
 }
 
 export const login = (data: LoginParams) => {
-  return request.post<LoginResult>('/v1/user/login', data);
+  return request.post<ApiResponse<TokenData>>('/v1/user/login', data);
 };
 
 export const getUserInfo = () => {
-  return request.get<{ code: number; data: UserInfo }>('/v1/user/info');
+  return request.get<ApiResponse<UserInfo>>('/v1/user/info');
 };
 
-export const register = (data: LoginParams) => {
-  return request.post<LoginResult>('/v1/user/register', data);
+export const register = (data: RegisterParams) => {
+  return request.post<ApiResponse<TokenData>>('/v1/user/register', data);
 };
 
 export const logout = () => {
-  return request.post('/v1/user/logout');
+  return request.post<ApiResponse<null>>('/v1/user/logout');
 }; 

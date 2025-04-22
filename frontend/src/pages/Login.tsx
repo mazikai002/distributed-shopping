@@ -2,24 +2,20 @@ import React from 'react';
 import { Form, Input, Button, Card, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
 import { useNavigate } from 'react-router-dom';
-import { login } from '../api/user';
+import { login, LoginParams } from '../api/user';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const [form] = Form.useForm();
 
-  const onFinish = async (values: any) => {
+  const onFinish = async (values: LoginParams) => {
     try {
-      const response = await login(values);
-      if (response.code === 200) {
-        message.success('登录成功');
-        localStorage.setItem('token', response.data.token);
-        navigate('/');
-      } else {
-        message.error(response.message || '登录失败');
-      }
-    } catch (error) {
-      message.error('登录失败，请重试');
+      const result = await login(values);
+      message.success('登录成功');
+      localStorage.setItem('token', result.data.data.token);
+      navigate('/');
+    } catch (error: any) {
+      message.error(error.message || '登录失败，请重试');
     }
   };
 
